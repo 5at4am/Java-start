@@ -1,4 +1,9 @@
 package Questions;
+//? question is to check if there are two same numbers in the array
+//? if there are two same numbers then return true else return false
+//? for example:
+//? num1 = {1,2,3,1} => true
+//? num2 = {1,2,3,4} => false
 
 import java.util.*;
 

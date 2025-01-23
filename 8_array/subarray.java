@@ -16,10 +16,10 @@ Inner Loop:
 The innermost loop iterates from index i to j,
 printing each element of the current subarray defined by these indices. 
 */
-        for (int i = 0; i < num.length; i++) {
-            for (int j = i ; j < num.length; j++) {
-                for (int k = i; k < j+1; k++) {
-                    System.out.print(num[k]+" ");
+        for (int i = 0; i < num.length; i++) { // start index
+            for (int j = i ; j < num.length; j++) { // end index
+                for (int k = i; k < j+1; k++) { // j+1 is used because the end index is exclusive
+                    System.out.print(num[k]+" "); // print the sub array
                 }
                 total_subarray++;
                 System.out.println();
