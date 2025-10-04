@@ -1,3 +1,4 @@
+// This program creates a 3x3 2D array and fills it with user input.
 import java.util.*;
 
 public class array {
@@ -22,3 +23,4 @@ public class array {
         sc.close();
     }
 }
+// This array is more organized than my life.

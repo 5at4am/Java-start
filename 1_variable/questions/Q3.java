@@ -1,3 +1,4 @@
+// This program calculates the total cost of three items, including GST.
 import java.util.*;
 
 public class Q3 {
@@ -18,3 +19,4 @@ public class Q3 {
         sc.close();
     }
 }
+// The only things certain in life are death and taxes. And maybe bugs.

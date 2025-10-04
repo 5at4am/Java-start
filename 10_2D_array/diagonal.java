@@ -1,3 +1,4 @@
+// This program calculates the sum of the diagonals of a 2D array.
 import java.util.*;
 public class diagonal 
 {
@@ -37,3 +38,4 @@ public class diagonal
         sc.close();
     }
 }
+// It's not a diagonal, it's a feature.

@@ -1,3 +1,4 @@
+// This program searches for a key in a sorted 2D array using a staircase search.
 import java.util.*;
 
 public class sorted {
@@ -26,3 +27,4 @@ public class sorted {
         sc.close();
     }
 }
+// I'm not staring, I'm just searching.

@@ -1,3 +1,4 @@
+// This program calculates the product of two numbers entered by the user.
 import java.util.*;
 
 public class product {
@@ -13,3 +14,4 @@ public class product {
 
      }
 }
+// It's a product of its environment.

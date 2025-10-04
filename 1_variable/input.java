@@ -1,3 +1,4 @@
+// This program demonstrates how to take input from the user.
 import java.util.*;
 public class input {
      public static void main(String args[]){
@@ -18,3 +19,4 @@ public class input {
           sc.close();
 }
 }
+// I'm not listening to you, I'm just taking your input.

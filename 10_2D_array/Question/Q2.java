@@ -1,3 +1,4 @@
+// This program calculates the sum of the elements in a specific row of a 2D array.
 package Question;
 import java.util.*;
 
@@ -18,3 +19,4 @@ public class Q2 {
         return sum;
     }
 }
+// It's all about that row, 'bout that row, no treble.

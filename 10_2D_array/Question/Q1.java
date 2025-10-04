@@ -1,3 +1,4 @@
+// This program counts the occurrences of a given key in a 2D array.
 package Question;
 
 import java.util.*;
@@ -23,3 +24,4 @@ public class Q1
         sc.close();
     }
 }
+// I've got the key, I've got the secret.

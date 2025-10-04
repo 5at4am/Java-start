@@ -1,3 +1,4 @@
+// This program calculates the sum of two hardcoded numbers.
 public class sum {
         public static void main(String args[]) {
                 int a = 12;
@@ -7,3 +8,4 @@ public class sum {
 
         }
 }
+// To be, or not to be, that is the sum.

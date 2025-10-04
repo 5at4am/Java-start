@@ -1,3 +1,4 @@
+// This program demonstrates the use of variables in Java.
 public class variable {
      public static void main(String args[]) {
           int a = 10;
@@ -8,3 +9,4 @@ public class variable {
 
      }
 }
+// Variables are like a box of chocolates... you never know what you're gonna get.

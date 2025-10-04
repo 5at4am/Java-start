@@ -1,3 +1,4 @@
+// This program creates a 2D array with user-defined dimensions and elements.
 import java.util.*;
 
 public class array_1 {
@@ -28,3 +29,4 @@ public class array_1 {
         sc.close();
     }
 }
+// A 2D array is like a spreadsheet, but with more programming.

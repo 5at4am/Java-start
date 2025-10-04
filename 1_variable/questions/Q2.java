@@ -1,3 +1,4 @@
+// This program calculates the area and perimeter of a square.
 import java.util.*;
 
 public class Q2 {
@@ -13,3 +14,4 @@ public class Q2 {
       sc.close();
    }
 }
+// Don't be a square, be a rhombus.

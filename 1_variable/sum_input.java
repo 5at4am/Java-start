@@ -1,3 +1,4 @@
+// This program calculates the sum of two numbers entered by the user.
 import java.util.*;
 public class sum_input {
      public static void main(String args[]){
@@ -11,3 +12,4 @@ public class sum_input {
      sc.close();
 }
 }
+// Some say the whole is greater than the sum of its parts.

@@ -1,3 +1,4 @@
+// This program performs a calculation with different data types and prints the result.
 public class Q4 {
     public static void main(String args[]) {
         byte b = 4;
@@ -14,3 +15,4 @@ public class Q4 {
         System.out.println($);
     }
 }
+// Who knew you could name a variable $? Java is full of surprises.

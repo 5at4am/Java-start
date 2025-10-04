@@ -1,3 +1,4 @@
+// This program calculates the area of a circle based on user input.
 import java.util.*;
 
 public class circle {
@@ -13,3 +14,4 @@ public class circle {
         sc.close();
     }
 }
+// Fun fact: The area of a pizza with radius 'z' and height 'a' is pizza.

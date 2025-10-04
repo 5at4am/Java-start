@@ -1,3 +1,4 @@
+// This program prints a character pattern based on user input.
 import java.util.*;
 
 public class character {
@@ -19,3 +20,4 @@ public class character {
         sc.close();
     }
 }
+// Hope you enjoyed the character pattern!

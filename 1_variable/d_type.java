@@ -1,3 +1,4 @@
+// This program demonstrates the use of different data types in Java.
 public class d_type {
 public static void main(String args[]){
      byte b=12;
@@ -18,3 +19,4 @@ public static void main(String args[]){
      System.out.println(ln);
     }
 }
+// So many types, so little time!

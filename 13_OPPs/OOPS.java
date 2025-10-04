@@ -11,13 +11,13 @@ public class OOPS {
 
         p1.color = "Blue";
         p1.tip = 20;
-        
+
         System.out.println(p1.color);
         System.out.println(p1.tip);
 
         bank myacc = new bank();
         myacc.username = "Satyam";
-        myacc.setpwd( "1234");
+        myacc.setpwd("1234");
 
     }
 
@@ -27,23 +27,20 @@ class Pen {
 
     String color;
     int tip;
-    
+
     void setcolor(String newcolor) {
         color = newcolor;
     }
-    
+
     void setTip(int newtip) {
         tip = newtip;
     }
 
-
-
 }
 
-class bank{
+class bank {
     public String username;
-    private String password;
-    public void setpwd(String pwd){
-        password = pwd;
+
+    public void setpwd(String pwd) {
     }
 }
