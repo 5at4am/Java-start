@@ -1,3 +1,20 @@
+/*
+ * File: Calculator.java
+ * Description: This program implements a basic calculator using switch-case for different operations.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Take two integer inputs from the user using Scanner
+ * - Take an operator input using Scanner
+ * - Implement multiple arithmetic operations using switch-case
+ * - Handle different operations: addition, subtraction, multiplication, division, modulo
+ * - Implement default case for invalid operators
+ * - Properly close Scanner resources
+ * 
+ * Operations supported:
+ * - Addition (+), Subtraction (-), Multiplication (*), Division (/), Modulo (%)
+ */
 import java.util.*;
 public class calculator {
 public static void main(String[] args) {
@@ -48,3 +65,5 @@ public static void main(String[] args) {
     sc.close();
     }   
 }
+// Calculators: Making math easier since the digital age!
+// Fun fact: This is a basic implementation - real calculators handle more complex operations!

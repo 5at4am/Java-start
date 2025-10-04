@@ -1,4 +1,15 @@
-// This program calculates the product of two numbers entered by the user.
+/*
+ * File: Product.java
+ * Description: This program calculates the product of two numbers entered by the user.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Take user input using Scanner
+ * - Perform multiplication operation
+ * - Display formatted output
+ * - Properly close Scanner resources
+ */
 import java.util.*;
 
 public class product {
@@ -15,3 +26,4 @@ public class product {
      }
 }
 // It's a product of its environment.
+// Fun fact: Multiplication is just repeated addition in disguise!

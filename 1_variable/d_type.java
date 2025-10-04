@@ -1,4 +1,17 @@
-// This program demonstrates the use of different data types in Java.
+/*
+ * File: DataTypeDemo.java
+ * Description: This program demonstrates the use of different data types in Java.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Declare and initialize different primitive data types
+ * - Print values of different data types
+ * - Understand the memory usage of different types
+ * 
+ * Data types covered:
+ * byte, short, char, boolean, float, int, double, long
+ */
 public class d_type {
 public static void main(String args[]){
      byte b=12;
@@ -20,3 +33,4 @@ public static void main(String args[]){
     }
 }
 // So many types, so little time!
+// Pro tip: Choose the right data type for your needs to optimize memory usage!

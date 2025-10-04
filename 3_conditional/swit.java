@@ -1,3 +1,22 @@
+/*
+ * File: Swit.java
+ * Description: This program demonstrates the use of switch-case statements in Java with a fun example.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Take integer input from the user using Scanner
+ * - Implement switch-case conditional logic
+ * - Use multiple case statements with break
+ * - Implement default case handling
+ * - Properly close Scanner resources
+ * 
+ * Switch cases implemented:
+ * - Case 1: Print "one"
+ * - Case 2: Print "two"
+ * - Case 3: Print "three"
+ * - Default: Print "'ZERO'"
+ */
 import java.util.*;
 public class swit {
     public static void main(String[] args) {
@@ -22,3 +41,5 @@ public class swit {
         sc.close();
     }
 }
+// Switch cases provide a clean way to handle multiple conditions!
+// Fun fact: Switch statements can be more efficient than multiple if-else statements for many cases!

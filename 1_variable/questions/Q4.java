@@ -1,4 +1,22 @@
-// This program performs a calculation with different data types and prints the result.
+/*
+ * File: Q4.java
+ * Description: This program performs a calculation with different data types and prints the result.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Declare and initialize variables of different primitive data types
+ * - Perform mixed-type arithmetic operations
+ * - Use type promotion in expressions
+ * - Understand character-to-integer conversion (char 'a' becomes its ASCII value)
+ * - Work with the modulo operator
+ * - Use special identifier names like ' (though not recommended in practice)
+ * 
+ * Data types used: byte, char, short, int, float, double
+ * Operations: multiplication, modulo, subtraction, and addition
+ * 
+ * Note: The char 'a' is converted to its ASCII value (97) during calculation.
+ */
 public class Q4 {
     public static void main(String args[]) {
         byte b = 4;
@@ -16,3 +34,4 @@ public class Q4 {
     }
 }
 // Who knew you could name a variable $? Java is full of surprises.
+// Pro tip: While $ is a valid identifier in Java, it's generally not recommended for variable names!

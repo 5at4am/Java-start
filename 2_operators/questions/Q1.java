@@ -1,3 +1,23 @@
+/*
+ * File: Q1.java
+ * Description: This program demonstrates various operator usage and behavior in Java.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Understand order of operations with arithmetic operators
+ * - Work with compound assignment operators
+ * - Use logical operators in conditional statements
+ * - Practice complex expression evaluation
+ * - Understand integer division behavior
+ * 
+ * Multiple exercises included:
+ * - Exercise 1: Arithmetic expression evaluation
+ * - Exercise 2: Logical operator usage with conditional statements
+ * - Exercise 3: Compound assignment operators
+ * - Exercise 4: Complex expression with multiple operators
+ * - Exercise 5: Division and multiplication precedence
+ */
 package operators.questions;
 
 public class Q1 {
@@ -45,3 +65,5 @@ public class Q1 {
 
 }
 }
+// Operators are the verbs of programming - they perform actions on data!
+// Fun fact: Operator precedence can significantly affect the result of expressions!

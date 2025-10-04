@@ -1,4 +1,20 @@
-// This program calculates the total cost of three items, including GST.
+/*
+ * File: Q3.java
+ * Description: This program calculates the total cost of three items, including GST (Goods and Services Tax).
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Take floating-point input from the user using Scanner
+ * - Perform arithmetic operations with decimal numbers
+ * - Calculate tax (18% GST in this example)
+ * - Compute final total with tax included
+ * - Format and display financial calculations
+ * - Properly close Scanner resources to prevent resource leaks
+ * 
+ * Tax calculation: GST = cost × 0.18
+ * Final total = original cost + GST
+ */
 import java.util.*;
 
 public class Q3 {
@@ -20,3 +36,4 @@ public class Q3 {
     }
 }
 // The only things certain in life are death and taxes. And maybe bugs.
+// Fun fact: In many countries, calculating taxes accurately is essential for business applications!
