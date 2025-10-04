@@ -1,3 +1,20 @@
+/*
+ * File: SumNum.java
+ * Description: This program demonstrates function creation with parameters and return values for addition.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create a function with parameters (formal parameters)
+ * - Return a value from a function
+ * - Call a function with arguments (actual parameters)
+ * - Take user input using Scanner
+ * - Pass values to functions and receive return values
+ * - Properly close Scanner resources
+ * 
+ * The sum1 function takes two integers, adds them, and returns the result.
+ * The main function gets user input, calls the sum function, and displays the result.
+ */
 import java.util.*;
 
 public class sum_num {
@@ -37,3 +54,5 @@ public class sum_num {
 // System.out.println("sum is : "+sum(a, b));
 
 // }
+// Functions with parameters and return values: The power of reusability!
+// Fun fact: Parameters allow functions to work with different values each time they're called!

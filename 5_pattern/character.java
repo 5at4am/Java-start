@@ -1,3 +1,24 @@
+/*
+ * File: Character.java
+ * Description: This program prints a character pattern based on user input, using consecutive letters.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Take integer input from the user using Scanner
+ * - Use nested for loops to create character patterns
+ * - Print consecutive alphabetic characters in increasing rows
+ * - Increment character values using ASCII arithmetic
+ * - Move to the next line after each row
+ * - Properly close Scanner resources
+ * 
+ * Pattern created: Each row contains consecutive letters starting from 'A',
+ * with the sequence continuing across rows.
+ * Example for n=3:
+ * A
+ * BC
+ * DEF
+ */
 // This program prints a character pattern based on user input.
 import java.util.*;
 
@@ -21,3 +42,4 @@ public class character {
     }
 }
 // Hope you enjoyed the character pattern!
+// Fun fact: Characters can be incremented just like numbers using their ASCII values!

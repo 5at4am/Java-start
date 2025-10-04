@@ -1,3 +1,26 @@
+/*
+ * File: StudentManagementSystem.java
+ * Description: A complete student management system with CRUD operations and file persistence.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Implement a complete CRUD (Create, Read, Update, Delete) application
+ * - Use object-oriented programming concepts (classes, objects, encapsulation)
+ * - Implement file-based data persistence using Java serialization
+ * - Create a menu-driven console application
+ * - Handle user input with Scanner in a continuous loop
+ * - Implement exception handling for file operations
+ * - Use Collections (ArrayList) to manage data
+ * 
+ * System features:
+ * - Add new students with unique IDs
+ * - Display all students in the system
+ * - Search for specific students by ID
+ * - Update existing student information
+ * - Delete students from the system
+ * - Save and load data to/from files
+ */
 import java.io.*;
 import java.util.*;
 
@@ -217,3 +240,5 @@ public class StudentManagementSystem {
         }
     }
 }
+// A complete student management system: From basic concepts to a full application!
+// Fun fact: This project combines many Java concepts learned throughout your course!

@@ -1,3 +1,25 @@
+/*
+ * File: Twice.java
+ * Description: This program checks if there are duplicate elements in an array.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Check for duplicate elements in an array using nested loops
+ * - Implement a function that returns a boolean value
+ * - Use nested for loops to compare all pairs of elements
+ * - Return true as soon as a duplicate is found
+ * - Return false if no duplicates are found after checking all pairs
+ * - Properly close Scanner resources
+ * 
+ * Algorithm: Nested loop approach
+ * - Compare each element with all subsequent elements
+ * - Return true immediately when a duplicate is found
+ * - Time complexity: O(n²), Space complexity: O(1)
+ * 
+ * Note: For better performance with large arrays, consider using a HashSet
+ * which would give O(n) time complexity.
+ */
 import java.util.*;
 //? question is to check if there are two same numbers in the array
 //? if there are two same numbers then return true else return false
@@ -22,3 +44,5 @@ public class twice
         sc.close();
     }
 }
+// Duplicate detection: Finding repeated elements in arrays!
+// Fun fact: This is a classic example of the pigeonhole principle in action!

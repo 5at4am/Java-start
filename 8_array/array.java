@@ -1,3 +1,20 @@
+/*
+ * File: Array.java
+ * Description: This program demonstrates basic array usage by storing and calculating marks for three subjects.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Declare and initialize an array with a fixed size
+ * - Store values in specific array indices
+ * - Access and retrieve values from array indices
+ * - Calculate percentage from stored values
+ * - Take user input to populate the array
+ * - Properly close Scanner resources
+ * 
+ * Note: The array is declared with size 50 but only first 3 elements are used.
+ * This demonstrates memory allocation and indexing in arrays.
+ */
 import java.util.*;
 public class array 
 {
@@ -21,3 +38,5 @@ public class array
         sc.close();
     }
 }
+// Arrays: The first step to managing collections of data!
+// Fun fact: Arrays have fixed size and zero-based indexing (0, 1, 2, ... n-1)!

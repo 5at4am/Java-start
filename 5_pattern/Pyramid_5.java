@@ -1,3 +1,21 @@
+/*
+ * File: Pyramid5.java
+ * Description: This program prints a centered pyramid pattern of stars with user-defined height.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Take user input for pyramid size using Scanner
+ * - Use nested for loops to create a symmetrical pyramid
+ * - Print leading spaces to center the pyramid (n - i spaces)
+ * - Print odd number of stars per row (2*i - 1) to form the pyramid shape
+ * - Understand the mathematical relationship between row number and star count
+ * - Properly close Scanner resources
+ * 
+ * Pattern structure:
+ * - For row i: Print (n-i) spaces followed by (2*i-1) stars
+ * - This creates a perfectly symmetrical pyramid
+ */
 import java.util.*;
 
 public class Pyramid_5 {
@@ -24,3 +42,5 @@ public class Pyramid_5 {
         sc.close();
     }
 }
+// Mathematical pyramid patterns: Where algebra meets art!
+// Fun fact: Each row has (2*i-1) stars, forming an arithmetic sequence: 1, 3, 5, 7, ...
