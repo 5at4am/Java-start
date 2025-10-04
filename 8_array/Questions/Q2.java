@@ -1,26 +1,56 @@
+/*
+ * File: Q2.java
+ * Description: This program performs search in a rotated sorted array.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Search for an element in a rotated sorted array
+ * - First find the pivot point (minimum element)
+ * - Perform binary search in the appropriate segment
+ * - Handle both rotated and non-rotated cases
+ * - Implement efficient search with O(log n) time complexity
+ * - Properly close Scanner resources
+ * 
+ * Algorithm:
+ * 1. Find the minimum element index (pivot point where rotation occurred)
+ * 2. Determine which segment contains the target based on value ranges
+ * 3. Perform binary search in the correct segment
+ * 
+ * Time complexity: O(log n)
+ * Space complexity: O(1)
+ * 
+ * Note: Fixed overloaded method naming conflict and corrected search logic.
+ */
 package Questions;
 
 import java.util.*;
 
 public class Q2 {
-    public static int search(int[] num, int target) {
-        int min = min_search(num);
-        // Check if target is within the range of the rotated array
-        if (num[min] <= target && target <= num[num.length - 1]) {
-            return search(num, min, num.length - 1, target); // Search in the right segment
+    public static int search(int[] nums, int target) {
+        int pivot = findPivot(nums);
+        
+        // If there's no pivot, array is not rotated, search the whole array
+        if (pivot == 0) {
+            return binarySearch(nums, 0, nums.length - 1, target);
+        }
+        
+        // If target is greater than or equal to first element, search left part
+        if (target >= nums[0]) {
+            return binarySearch(nums, 0, pivot - 1, target);
         } else {
-            return search(num, 0, min - 1, target); // Search in the left segment
+            return binarySearch(nums, pivot, nums.length - 1, target);
         }
     }
 
-    public static int search(int[] num, int left, int right, int target) {
+    public static int binarySearch(int[] nums, int left, int right, int target) {
         int l = left;
         int r = right;
         while (l <= r) {
             int mid = l + (r - l) / 2;
-            if (num[mid] == target) {
+            if (nums[mid] == target) {
                 return mid; // Target found
-            } else if (num[mid] < target) {
+            } else if (nums[mid] < target) {
                 l = mid + 1; // Move to the right half
             } else {
                 r = mid - 1; // Move to the left half
@@ -29,26 +59,36 @@ public class Q2 {
         return -1; // Target not found
     }
 
-    public static int min_search(int[] num) {
+    public static int findPivot(int[] nums) {
         int left = 0;
-        int right = num.length - 1;
+        int right = nums.length - 1;
 
         // Handle case when the array is not rotated
-        if (num[left] < num[right]) {
-            return 0; // The first element is the minimum
+        if (nums[left] <= nums[right]) {
+            return 0; // The array is not rotated
         }
 
-        while (left < right) {
+        while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (mid > 0 && num[mid - 1] > num[mid]) {
-                return mid; // Found minimum element
-            } else if (num[left] <= num[mid] && num[mid]>num[right]) {
-                left = mid + 1; // Move right
+            
+            // Check if mid is the pivot point
+            if (mid < nums.length - 1 && nums[mid] > nums[mid + 1]) {
+                return mid + 1; // Found pivot
+            }
+            
+            // Check if mid-1 is the pivot point
+            if (mid > 0 && nums[mid - 1] > nums[mid]) {
+                return mid; // Found pivot
+            }
+            
+            // Decide which half to search
+            if (nums[left] <= nums[mid]) {
+                left = mid + 1; // Pivot is in the right half
             } else {
-                right = mid-1; // Move left
+                right = mid - 1; // Pivot is in the left half
             }
         }
-        return left; // Return index of minimum element
+        return 0; // Default case
     }
 
     public static void main(String args[]) {
@@ -67,3 +107,5 @@ public class Q2 {
         sc.close();
     }
 }
+// Searching in rotated sorted arrays: Finding elements efficiently!
+// Fun fact: This combines pivot finding with binary search for O(log n) performance!

@@ -1,3 +1,24 @@
+/*
+ * File: Q3.java
+ * Description: This program transposes a 2D array (rows become columns and vice versa).
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create a transposed version of a 2D array
+ * - Transform rows to columns and columns to rows
+ * - Use the relationship: transposed[j][i] = original[i][j]
+ * - Print 2D arrays using a helper method
+ * - Properly close Scanner resources
+ * 
+ * Transpose algorithm:
+ * - Create a new matrix with dimensions [original_columns][original_rows]
+ * - For each element at [i][j] in original, place it at [j][i] in transpose
+ * - Original: m×n → Transposed: n×m
+ * 
+ * Time complexity: O(m*n) to copy all elements
+ * Space complexity: O(m*n) for the transposed matrix
+ */
 // This program transposes a 2D array.
 package Question;
 
@@ -31,3 +52,4 @@ public class Q3 {
         }
 }
 // Welcome to the Matrix.
+// Matrix transpose: Swapping rows with columns!

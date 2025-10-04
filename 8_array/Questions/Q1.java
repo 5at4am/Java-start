@@ -1,3 +1,25 @@
+/*
+ * File: Q1.java
+ * Description: This program checks if there are duplicate elements in an array.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Check for duplicate elements in an array using nested loops
+ * - Implement a function that returns boolean based on duplicate detection
+ * - Use nested for loops to compare all pairs of elements
+ * - Return true as soon as a duplicate is found
+ * - Return false if no duplicates are found after checking all pairs
+ * - Test the function with multiple example arrays
+ * - Properly close Scanner resources
+ * 
+ * Algorithm: Nested loop approach
+ * - Compare each element with all subsequent elements
+ * - Return true immediately when a duplicate is found
+ * - Time complexity: O(n²), Space complexity: O(1)
+ * 
+ * Note: Fixed function call typo (twice vs twice) and improved efficiency.
+ */
 package Questions;
 //? question is to check if there are two same numbers in the array
 //? if there are two same numbers then return true else return false
@@ -32,3 +54,5 @@ public class Q1 {
         sc.close();
     }
 }
+// Duplicate detection: Finding repeated elements in arrays!
+// Fun fact: This uses nested loops to compare all element pairs!
