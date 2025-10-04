@@ -215,11 +215,11 @@ public class StudentManagementSystem {
                     System.out.print("Enter New Grade: ");
                     grade = scanner.nextDouble();
                     scanner.nextLine(); // Consume newline
-
+                    
                     manager.updateStudent(id, name, age, course, grade);
                     break;
-
-                case 5:
+                    
+                    case 5:
                     System.out.print("Enter Student ID to delete: ");
                     id = scanner.nextLine();
                     manager.deleteStudent(id);
@@ -236,8 +236,9 @@ public class StudentManagementSystem {
 
                 default:
                     System.out.println("Invalid choice. Please try again.");
+                    scanner.close();
+                }
             }
-        }
     }
 }
 // A complete student management system: From basic concepts to a full application!
