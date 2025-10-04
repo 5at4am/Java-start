@@ -1,3 +1,23 @@
+/*
+ * File: Upper.java
+ * Description: This program converts the first letter of each word in a string to uppercase.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Capitalize the first letter of each word in a string
+ * - Use StringBuilder for efficient string manipulation
+ * - Identify word boundaries (spaces) in a string
+ * - Work with Character class methods for case conversion
+ * - Convert StringBuilder back to String
+ * - Properly close Scanner resources
+ * 
+ * Algorithm:
+ * - Capitalize first character of the string
+ * - For each space followed by a character, capitalize that character
+ * - Maintain all other characters as they are
+ * - Time complexity: O(n), where n is string length
+ */
 import java.util.*;
 
 public class upper {
@@ -26,3 +46,5 @@ public class upper {
         sc.close();
     }
 }
+// Title case conversion: Capitalizing the first letter of each word!
+// Fun fact: This algorithm handles multiple spaces between words correctly!

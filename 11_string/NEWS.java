@@ -1,3 +1,24 @@
+/*
+ * File: NEWS.java
+ * Description: This program calculates the shortest distance from origin based on movement directions.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Parse a string of movement directions (N, S, E, W)
+ * - Track coordinates based on movement commands
+ * - Calculate Euclidean distance from origin
+ * - Use Math.sqrt() for distance calculation
+ * - Properly close Scanner resources
+ * 
+ * Movement mapping:
+ * - N: Move North (y increases)
+ * - S: Move South (y decreases)  
+ * - E: Move East (x increases)
+ * - W: Move West (x decreases)
+ * 
+ * Distance formula: sqrt(x² + y²)
+ */
 import java.util.*;
 
 public class NEWS 
@@ -31,3 +52,5 @@ public class NEWS
         sc.close();
     }
 }
+// Path calculation: When directions become coordinates!
+// Fun fact: This is a simple vector addition problem in disguise!

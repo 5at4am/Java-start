@@ -1,3 +1,21 @@
+/*
+ * File: Dimond.java
+ * Description: This program prints a diamond pattern using nested for loops.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create a diamond pattern with upper and lower triangles
+ * - Use proper spacing to center the diamond shape
+ * - Calculate star counts using mathematical formulas
+ * - Take user input for diamond size
+ * - Properly close Scanner resources
+ * 
+ * Pattern structure:
+ * Upper half: Increasing stars with decreasing leading spaces
+ * Lower half: Decreasing stars with increasing leading spaces
+ * Formula for stars: (2*i - 1) for upper, (2*(n-i)+1) for lower
+ */
 import java.util.*;
 
 public class dimond {
@@ -28,3 +46,5 @@ public class dimond {
         sc.close();
     }
 }
+// Diamond patterns: Creating geometric beauty with code!
+// Fun fact: The mathematical relationship (2*i-1) creates the perfect diamond shape!

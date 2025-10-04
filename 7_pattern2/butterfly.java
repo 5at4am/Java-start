@@ -1,3 +1,22 @@
+/*
+ * File: Butterfly.java
+ * Description: This program prints a butterfly pattern using nested for loops.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Use nested loops to create complex symmetrical patterns
+ * - Print left and right wings with proper spacing
+ * - Create both upper and lower halves of the butterfly
+ * - Calculate spacing based on row number for symmetry
+ * - Take user input for pattern size
+ * - Properly close Scanner resources
+ * 
+ * Pattern structure:
+ * Upper half: Stars increase, spaces decrease
+ * Lower half: Stars decrease, spaces increase
+ * Creates a symmetrical butterfly shape
+ */
 import java.util.*;
 
 public class butterfly {
@@ -38,3 +57,5 @@ public class butterfly {
 
     }
 }
+// Butterfly patterns: The art of symmetrical programming!
+// Fun fact: This complex pattern uses mathematical relationships to maintain symmetry!

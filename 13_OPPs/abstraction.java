@@ -1,3 +1,22 @@
+/*
+ * File: Abstraction.java
+ * Description: This program demonstrates abstraction using abstract classes and methods in Java.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create abstract classes and methods
+ * - Implement abstract methods in subclasses
+ * - Use inheritance with abstract classes
+ * - Understand the concept of abstraction in OOP
+ * - Show constructor calling in inheritance hierarchy
+ * 
+ * Key concepts:
+ * - Abstract class: Cannot be instantiated, can have both abstract and concrete methods
+ * - Abstract method: Must be implemented by subclasses
+ * - The 'animal' class defines common behaviors but forces subclasses to implement 'walk'
+ * - Constructor calling: Parent constructor is called before child constructor
+ */
 public class abstraction {
     public static void main(String[] args) {
         horse h = new horse();
@@ -60,3 +79,5 @@ class chicken extends animal {
         System.out.println("walk on 2 leg");
     }
 }
+// Abstraction: Hiding complex implementation behind simple interfaces!
+// Fun fact: Abstract classes provide partial abstraction in Java!

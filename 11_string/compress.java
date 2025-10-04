@@ -1,4 +1,24 @@
 
+/*
+ * File: Compress.java
+ * Description: This program implements string compression by counting consecutive characters.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Implement run-length encoding compression for strings
+ * - Count consecutive identical characters
+ * - Use StringBuilder for efficient string manipulation
+ * - Append character counts only when greater than 1
+ * - Handle special characters and spaces in compression
+ * - Properly close Scanner resources
+ * 
+ * Compression algorithm:
+ * - Iterate through string, count consecutive characters
+ * - Append character + count to result (if count > 1)
+ * - Example: "aaabbccc" -> "a3b2c3"
+ * - Time complexity: O(n), Space complexity: O(n)
+ */
 import java.util.*;
 
 public class compress {
@@ -59,3 +79,5 @@ public class compress {
 //         sc.close();
 //     }
 // }
+// String compression: Making long strings shorter with counts!
+// Fun fact: This is a simple form of run-length encoding used in data compression!

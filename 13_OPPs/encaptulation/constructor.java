@@ -1,3 +1,22 @@
+/*
+ * File: Constructor.java
+ * Description: This program demonstrates constructor overloading in Java classes.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create different types of constructors (parametrized and non-parametrized)
+ * - Implement constructor overloading (multiple constructors with different parameters)
+ * - Understand how constructors are called when objects are created
+ * - Initialize object properties using constructors
+ * 
+ * Key concepts:
+ * - Non-parametrized constructor: Creates object without parameters
+ * - Parametrized constructor: Creates object with initial values
+ * - Constructor overloading: Multiple constructors with different signatures
+ * - this keyword: Refers to the current object instance
+ * - Constructor chaining: How constructors can call other constructors
+ */
 package encaptulation;
 
 public class constructor {
@@ -18,26 +37,28 @@ class student {
     String name;
     int rollno;
 
-    // ↓ nothing is instialized in the student
-    student() { // non paramiterized constructor
+    // ↓ nothing is initialized in the student
+    student() { // non parametrized constructor
         System.out.println("your constructor called : ");
 
     }
 
-    // ↓ something is instialized in the student
-    student(String name, int rollno) { // paramiterized constructor
+    // ↓ something is initialized in the student
+    student(String name, int rollno) { // parametrized constructor
         this.name = name;
         System.out.println("Constructor called " + name);
         this.rollno = rollno;
         System.out.println("construct called " + rollno);
     }
 
-    student(String name) { // paramiterized constructor
+    student(String name) { // parametrized constructor
         this.name = name;
     }
 
-    student(int rollno) { // paramiterized constructor
+    student(int rollno) { // parametrized constructor
         this.rollno = rollno;
     }
 
 }
+// Constructor overloading: Different ways to create objects!
+// Fun fact: Constructors have the same name as the class and no return type!

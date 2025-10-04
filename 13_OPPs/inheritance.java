@@ -1,5 +1,25 @@
 
 
+/*
+ * File: Inheritance.java
+ * Description: This program demonstrates inheritance in Java with multiple class hierarchies.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create parent and child classes using inheritance
+ * - Access parent class methods and fields in child classes
+ * - Understand the concept of inheritance in OOP
+ * - Show multiple inheritance hierarchies (fish, mammal, bird)
+ * - Demonstrate method inheritance and property sharing
+ * 
+ * Key concepts:
+ * - Parent class (animal): Contains common properties and methods
+ * - Child classes (fish, mammal, bird): Inherit from parent and add specialized features
+ * - Inheritance hierarchy: animal -> mammal -> dog
+ * - Inherited properties: color, eat(), breath()
+ * - Added properties: fins, legs, breed, etc.
+ */
 public class inheritance {
     public static void main(String[] args) {
         fish shark = new fish();
@@ -66,3 +86,5 @@ class bird extends animal {
     }
 
 }
+// Inheritance: The "is-a" relationship in object-oriented programming!
+// Fun fact: Inheritance promotes code reusability and establishes relationships between classes!

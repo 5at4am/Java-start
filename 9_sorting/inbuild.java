@@ -1,3 +1,22 @@
+/*
+ * File: Inbuild.java
+ * Description: This program demonstrates Java's built-in sorting methods using Arrays class.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Use Arrays.sort() for ascending order sorting
+ * - Sort only a portion of an array using index parameters
+ * - Sort in descending order using Collections.reverseOrder()
+ * - Work with both primitive int arrays and Integer wrapper arrays
+ * - Implement overloaded functions to handle different data types
+ * 
+ * Built-in sorting features:
+ * - Arrays.sort(array): Sort entire array in ascending order
+ * - Arrays.sort(array, fromIndex, toIndex): Sort portion of array
+ * - Arrays.sort(array, Collections.reverseOrder()): Sort in descending order
+ * - Arrays.sort(array, fromIndex, toIndex, Collections.reverseOrder()): Partial descending sort
+ */
 //import java.util.*;
 import java.util.Arrays;
 import java.util.Collections;
@@ -36,3 +55,5 @@ public class inbuild
         // sc.close();
     }
 }
+// Built-in sort: When you want efficiency without implementing algorithms!
+// Fun fact: Arrays.sort() uses optimized algorithms like Dual-Pivot Quicksort!

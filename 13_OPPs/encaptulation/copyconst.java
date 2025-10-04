@@ -1,3 +1,24 @@
+/*
+ * File: Copyconst.java
+ * Description: This program demonstrates shallow copy vs deep copy using constructors in Java.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Implement copy constructor for object cloning
+ * - Understand the difference between shallow and deep copy
+ * - Handle reference types in object copying
+ * - Prevent shared references to mutable objects
+ * 
+ * Key concepts:
+ * - Shallow copy: Copies references, not the actual objects
+ * - Deep copy: Creates new instances of referenced objects
+ * - For arrays and objects, shallow copy leads to shared references
+ * - Deep copy prevents unintended modifications to original objects
+ * 
+ * In the example, when using deep copy, modifying s1.mark[2] doesn't affect s2.mark
+ * because each object has its own copy of the array.
+ */
 package encaptulation;
 public class copyconst {
     public static void main(String[] args) {
@@ -53,3 +74,5 @@ class student {
     }
 
 }
+// Deep copy vs shallow copy: Copying objects with reference fields!
+// Fun fact: Deep copy creates independent copies of referenced objects!

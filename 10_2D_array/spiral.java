@@ -1,3 +1,25 @@
+/*
+ * File: Spiral.java
+ * Description: This program prints the elements of a 2D array in spiral order.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Implement spiral traversal of a 2D array
+ * - Use boundary pointers (top, right, bottom, left) to control traversal
+ * - Print elements in top->right->bottom->left order repeatedly
+ * - Handle edge cases when rows or columns meet in the middle
+ * - Create a dynamic matrix with user-defined dimensions
+ * - Properly close Scanner resources
+ * 
+ * Spiral Traversal Algorithm:
+ * 1. Print top row from left to right (SR constant, SC to EC)
+ * 2. Print right column from top+1 to bottom (SC to EC constant, SR+1 to ER)
+ * 3. Print bottom row from right-1 to left (ER constant, EC-1 to SC)
+ * 4. Print left column from bottom-1 to top+1 (SC constant, ER-1 to SR+1)
+ * 5. Adjust boundaries: increment SR & SC, decrement ER & EC
+ * 6. Repeat until boundaries cross
+ */
 import java.util.*;
 
 public class spiral {
@@ -70,3 +92,5 @@ public class spiral {
         sc.close();
     }
 }
+// Spiral traversal: Following the path of a nautilus shell in code!
+// Fun fact: Spiral matrices are common in coding interviews and game development!

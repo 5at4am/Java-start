@@ -1,3 +1,25 @@
+/*
+ * File: NumPara.java
+ * Description: This program prints a number pyramid pattern that increases and decreases in each row.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create a complex number pattern with leading spaces
+ * - Print descending numbers followed by ascending numbers in each row
+ * - Calculate proper spacing for center alignment
+ * - Take user input for pattern size
+ * - Properly close Scanner resources
+ * 
+ * Pattern structure:
+ * For n=4:
+ *    1
+ *   212
+ *  32123
+ * 4321234
+ * 
+ * Each row has: spaces, descending numbers, ascending numbers
+ */
 import java.util.*;
 public class num_para 
 {
@@ -28,3 +50,5 @@ public class num_para
         sc.close();
     }
 }
+// Number pyramid with ascending and descending sequences!
+// Fun fact: Each row creates a symmetric number pattern around its center!

@@ -1,3 +1,22 @@
+/*
+ * File: StatKeyword.java
+ * Description: This program demonstrates the use of static keyword in Java.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Use static variables to share data across all instances of a class
+ * - Understand the difference between instance and static variables
+ * - See how static variables are shared among all objects
+ * - Implement getter and setter methods for object properties
+ * 
+ * Key concepts:
+ * - Static variables: Belong to the class, not to any specific instance
+ * - All objects of the class share the same static variable
+ * - Changing static variable in one object affects all other objects
+ * - Static variables are initialized when the class is first loaded
+ * - Non-static (instance) variables are unique to each object
+ */
 public class stat_keyword {
     public static void main(String[] args) {
         student s1 = new student();
@@ -35,3 +54,5 @@ class student {
         return this.roll;
     }
 }
+// Static keyword: When data should be shared across all instances!
+// Fun fact: Static variables belong to the class, not to individual objects!

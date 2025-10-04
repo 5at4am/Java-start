@@ -1,3 +1,21 @@
+/*
+ * File: HoloRombus.java
+ * Description: This program prints a hollow rhombus pattern using nested loops.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create a hollow rhombus with stars on borders and spaces inside
+ * - Use leading spaces to create the slanted sides of the rhombus
+ * - Apply conditional logic to print stars only on the borders
+ * - Take user input for the size of the rhombus
+ * - Properly close Scanner resources
+ * 
+ * Pattern structure:
+ * - Leading spaces decrease with each row: (n-i)
+ * - Hollow rectangle logic for the inner part: print stars only on borders
+ * - For each row, print stars on first/last row or first/last column
+ */
 import java.util.*;
 
 public class holo_rombus {
@@ -26,3 +44,5 @@ public class holo_rombus {
         sc.close();
     }
 }
+// Hollow rhombus: Combining slanted sides with hollow interior!
+// Fun fact: This pattern combines spacing logic with border detection!

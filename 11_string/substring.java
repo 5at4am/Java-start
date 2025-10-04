@@ -1,3 +1,24 @@
+/*
+ * File: Substring.java
+ * Description: This program demonstrates substring extraction using both custom implementation and built-in method.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Implement custom substring extraction algorithm
+ * - Use built-in substring() method
+ * - Understand substring extraction logic and indices
+ * - Compare custom vs built-in implementations
+ * - Properly close Scanner resources
+ * 
+ * Substring concepts:
+ * - Extract substring from index 'si' to 'ei-1' (exclusive end)
+ * - substring(si, ei) returns characters from index si to ei-1
+ * - Custom implementation shows the algorithm behind the built-in method
+ * 
+ * Note: Custom implementation is inefficient due to string concatenation in loop.
+ * Use built-in substring() method for better performance.
+ */
 import java.util.*;
 
 public class substring {
@@ -28,3 +49,5 @@ public class substring {
         sc.close();
     }
 }
+// Substring extraction: When you only need part of a string!
+// Fun fact: Built-in substring() method is optimized and more efficient!

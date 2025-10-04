@@ -1,3 +1,25 @@
+/*
+ * File: Operation.java
+ * Description: This program demonstrates various bit manipulation operations on integers.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Get the value of the i-th bit in a number
+ * - Set the i-th bit to 1
+ * - Clear the i-th bit to 0
+ * - Clear last i bits
+ * - Use masks for bit manipulation
+ * - Properly close Scanner resources
+ * 
+ * Bit manipulation operations:
+ * - Get bit: Use mask (1 << i) and AND operation
+ * - Set bit: Use mask (1 << i) and OR operation
+ * - Clear bit: Use mask ~(1 << i) and AND operation
+ * - Clear last i bits: Use mask (~0) << i and AND operation
+ * 
+ * These operations are fundamental in low-level programming and optimization.
+ */
 import java.util.*;
 
 public class operation {
@@ -59,3 +81,5 @@ public class operation {
         sc.close();
     }
 }
+// Bit manipulation: The art of working with individual bits!
+// Fun fact: These operations are the foundation of many algorithms and optimizations!

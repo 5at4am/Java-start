@@ -1,3 +1,26 @@
+/*
+ * File: Sorted.java
+ * Description: This program searches for a key in a sorted 2D array using a staircase search algorithm.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Implement staircase search in a sorted 2D array
+ * - Search efficiently in a matrix sorted row-wise and column-wise
+ * - Start from the top-right corner and move accordingly
+ * - Achieve O(n+m) time complexity instead of O(n*m) brute force
+ * - Properly close Scanner resources
+ * 
+ * Staircase Search Algorithm:
+ * - Start at top-right corner (row=0, col=n-1)
+ * - If element equals key: found
+ * - If element > key: move left (col--)
+ * - If element < key: move down (row++)
+ * - Continue until element found or boundaries crossed
+ * 
+ * Time complexity: O(n+m) where n is rows and m is columns
+ * Space complexity: O(1)
+ */
 // This program searches for a key in a sorted 2D array using a staircase search.
 import java.util.*;
 
@@ -28,3 +51,4 @@ public class sorted {
     }
 }
 // I'm not staring, I'm just searching.
+// Staircase search: Efficient search in sorted 2D arrays!

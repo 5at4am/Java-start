@@ -1,3 +1,23 @@
+/*
+ * File: Inter.java
+ * Description: This program demonstrates interface implementation and method overriding in Java.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create interfaces with abstract methods
+ * - Implement interfaces in classes
+ * - Override interface methods in implementing classes
+ * - Understand the concept of polymorphism with interfaces
+ * - Show the "Contract" nature of interfaces
+ * 
+ * Key concepts:
+ * - Interface: Defines a contract (what methods must be implemented)
+ * - Implements: Keyword to implement an interface
+ * - All interface methods are implicitly abstract and public
+ * - Implementing classes must provide concrete implementations
+ * - Method overriding: Providing specific implementation in subclass
+ */
 public class inter {
     public static void main(String[] args) {
         
@@ -47,3 +67,5 @@ class king implements chessplayer {
         System.out.println("king can kill in all direction but only one step");
     }
 }
+// Interfaces: Defining contracts that classes must follow!
+// Fun fact: A class can implement multiple interfaces but extend only one class!

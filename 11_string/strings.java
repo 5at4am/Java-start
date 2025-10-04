@@ -1,3 +1,24 @@
+/*
+ * File: Strings.java
+ * Description: This program demonstrates various String operations and methods in Java.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Create strings using literals and new keyword
+ * - Access string characters using charAt()
+ * - Get string length using length() method
+ * - Concatenate strings using + operator
+ * - Iterate through string characters
+ * - Understand string immutability
+ * - Compare string creation methods
+ * - Properly close Scanner resources
+ * 
+ * Key String concepts:
+ * - Strings are immutable in Java
+ * - Different ways to create strings: literals vs new keyword
+ * - Common string methods: charAt(), length(), concatenation
+ */
 import java.util.*;
 
 public class strings {
@@ -25,7 +46,7 @@ public class strings {
         String full_name = "Tony Stark";
         System.out.println(full_name.length());
 
-        // concatination
+        // concatenation
         String first = "satyam";
         String last = "raj";
         String full = first + " " + last;
@@ -37,3 +58,5 @@ public class strings {
         sc.close();
     }
 }
+// String operations: The fundamentals of text processing in Java!
+// Fun fact: Once a String is created, it cannot be changed (immutable)!
