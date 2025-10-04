@@ -1,3 +1,26 @@
+/*
+ * File: Q4.java
+ * Description: This program calculates how much rainwater can be trapped between bars.
+ * Author: Satyam Raj
+ * Date: October 2025
+ * 
+ * Purpose: This program demonstrates how to:
+ * - Calculate trapped rainwater using the two-pointer approach
+ * - Track left and right maximum heights simultaneously
+ * - Move pointers inward based on which side has lower max
+ * - Calculate trapped water at each position
+ * - Understand the concept of boundary heights in trapping problems
+ * - Properly close Scanner resources
+ * 
+ * Algorithm (Two-pointer approach):
+ * - Use two pointers from left and right ends
+ * - Track max height seen from both sides
+ * - Move the pointer with the smaller max height
+ * - Add difference between max height and current height to result
+ * 
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ */
 package Questions;
 
 import java.util.*;
@@ -30,3 +53,5 @@ public class Q4 {
         sc.close();
     }
 }
+// Rainwater trapping: Calculating water stored between bars!
+// Fun fact: This two-pointer approach is more efficient than the traditional method!
