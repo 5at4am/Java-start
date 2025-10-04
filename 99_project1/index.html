@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Profile Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fake Profile Detector</h1>
+        <form id="profileForm">
+            <label for="friends_count">Number of Friends:</label>
+            <input type="number" id="friends_count" name="friends_count" required>
+
+            <label for="profile_picture">Profile Picture:</label>
+            <select id="profile_picture" name="profile_picture" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label for="account_age_days">Account Age (Days):</label>
+            <input type="number" id="account_age_days" name="account_age_days" required>
+
+            <label for="posts_count">Number of Posts:</label>
+            <input type="number" id="posts_count" name="posts_count" required>
+
+            <button type="submit">Detect</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("profileForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const formData = {
+                friends_count: parseInt(document.getElementById("friends_count").value),
+                profile_picture: parseInt(document.getElementById("profile_picture").value),
+                account_age_days: parseInt(document.getElementById("account_age_days").value),
+                posts_count: parseInt(document.getElementById("posts_count").value)
+            };
+
+            // Send POST request to Flask API
+            const response = await fetch("/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            // Display result
+            document.getElementById("result").innerText = `Result: ${result.result}`;
+        });
+    </script>
+</body>
+</html>
