@@ -58,7 +58,7 @@ public class spiral {
             ER--;
 
         }
-        //System.out.println();
+        System.out.println();
 
     }
 
