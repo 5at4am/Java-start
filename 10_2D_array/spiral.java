@@ -48,7 +48,7 @@ public class spiral {
                 }
                 System.out.print(mat[ER][j] + " ");
             }
-
+            // left
             for (int i = ER - 1; i >= SR + 1; i--) {
                 System.out.print(mat[i][SC] + " ");
             }
