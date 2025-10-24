@@ -20,7 +20,7 @@ public class spiral {
                 System.out.print(mat[i][ec]+" ");
             }
             // bottom
-            for(int j = ec-1; j>=sc;j--){
+            for(int j = ec-1; j>=sc;j--){ 
                 System.out.print(mat[er][j]+" ");
             }
             //left
