@@ -311,4 +311,26 @@
 
 
 
-// ? 
+// ? check if strin is palandrom using recursion
+
+public class rev {
+   public static boolean pal(String s, int i) {
+      if (i >= s.length())
+         return true;
+      if (s[i] != s[s.length() - i - 1] return false;
+
+      return pal(s,i+1);
+
+   }
+    public static void swap(int arr[],int a, int b) {
+      int c = arr[a];
+      arr[a] = arr[b];
+      arr[b] = c;
+   }
+
+   public static void main(String[] args) {
+      String st = "madam";
+      System.out.println(pal(st,0));
+       
+   }
+}
