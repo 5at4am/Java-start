@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class dec_num {
     public static void  num(int n) {
