@@ -305,7 +305,6 @@
 //       int arr[] = { 1, 2, 3, 4, 5 };
 //       ar(arr, 0, arr.length);
 //       print(arr);
-      
 //    }
 // }
 
@@ -313,24 +312,106 @@
 
 // ? check if strin is palandrom using recursion
 
-public class rev {
-   public static boolean pal(String s, int i) {
-      if (i >= s.length())
-         return true;
-      if (s[i] != s[s.length() - i - 1] return false;
+// public class rev {
+//    public static boolean pal(String s, int i) {
+//       if (i >= s.length())
+//          return true;
+//       if (s.charAt(i) != s.charAt(s.length()-i-1)) return false;
 
-      return pal(s,i+1);
+//       return pal(s,i+1);
 
-   }
-    public static void swap(int arr[],int a, int b) {
-      int c = arr[a];
-      arr[a] = arr[b];
-      arr[b] = c;
-   }
+//    }
+//     public static void swap(int arr[],int a, int b) {
+//       int c = arr[a];
+//       arr[a] = arr[b];
+//       arr[b] = c;
+//    }
 
-   public static void main(String[] args) {
-      String st = "madam";
-      System.out.println(pal(st,0));
+//    public static void main(String[] args) {
+//       String st = "mada3";
+//       System.out.println(pal(st,0));
        
+//    }
+// }
+
+// ! subsequence 
+/* 
+ * Start → []
+|
+├── include 3 → [3]
+│   ├── include 1 → [3,1]
+│   │   ├── include 2 → [3,1,2]
+│   │   └── exclude 2 → [3,1]
+│   └── exclude 1 → [3]
+│       ├── include 2 → [3,2]
+│       └── exclude 2 → [3]
+└── exclude 3 → []
+    ├── include 1 → [1]
+    │   ├── include 2 → [1,2]
+    │   └── exclude 2 → [1]
+    └── exclude 1 → []
+        ├── include 2 → [2]
+        └── exclude 2 → []
+
+ */
+
+
+// import java.util.*;
+
+// public class rev {
+
+//    public static void stat(int arr[],ArrayList<Integer> list, int i) {
+//       if (i >= arr.length) {
+//          System.out.println(list);
+//          return;
+//       }
+//       list.add(arr[i]);
+//       stat(arr,list,i+1);
+//       list.remove(list.size()-1);
+//       stat(arr,list, i+1);
+//    }
+   
+//    public static void main(String[] args) {
+//       int arr[] = { 3, 1, 2 };
+//       ArrayList<Integer> list = new ArrayList<>();
+
+//       stat(arr,list,0);
+   
+//    }
+// }
+
+
+// ? print subsequent whose value is k
+
+
+import java.util.*;
+
+public class rev {
+
+   public static void stat(int arr[],ArrayList<Integer> list, int i,int s, int key) {
+      
+      if (i >= arr.length) {
+         if(s==key){
+            System.out.println(list);
+
+         }
+         return;
+      }
+      list.add(arr[i]);
+      s += arr[i];
+      stat(arr,list,i+1,s,key);
+      s -= arr[i];
+      list.remove(list.size() - 1);
+      stat(arr,list, i+1,s,key);
+   }
+   
+   public static void main(String[] args) {
+      int arr[] = { 3, 1, 2 };
+      int sum = 3;
+      
+      ArrayList<Integer> list = new ArrayList<>();
+
+      stat(arr,list,0,0, sum);
+   
    }
 }
