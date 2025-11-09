@@ -411,6 +411,8 @@ public class rev {
       
       ArrayList<Integer> list = new ArrayList<>();
 
+
+// demo gi
       stat(arr,list,0,0, sum);
    
    }
