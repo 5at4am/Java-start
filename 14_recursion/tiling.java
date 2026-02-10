@@ -39,7 +39,7 @@ public class tiling {
     }
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = 5;
         System.out.println(tile(n));
 
     }
