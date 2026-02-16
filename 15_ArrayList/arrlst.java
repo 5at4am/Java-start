@@ -53,6 +53,8 @@ public class arrlst {
         int size = list.size();
         System.out.println(size);
 
+        // ! add element at specific index
+        
         list.add(1, 2002);
         System.out.println(list);
 
