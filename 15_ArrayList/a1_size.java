@@ -38,6 +38,22 @@ public class a1_size {
         }
         System.out.println("maximum is:" + max);
 
+        // fix Swap 2 Numbers in ArrayList
+        ArrayList<Integer> lst1 = new ArrayList<>();
+        lst1.add(2);
+        lst1.add(5);
+        lst1.add(9);
+        lst1.add(3);
+        lst1.add(6);
+        swap(lst1, 1, 3);
+        System.out.println(lst1);
+
+    }
+    
+    public static void swap(ArrayList<Integer> list , int i, int j) {
+        int temp = list.get(i);
+        list.set(i, list.get(j));
+        list.set(j, temp);
     }
 
 }
