@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class arrlst {
     public static void main(String[] args) {
 
-        //  ArrayList<DataType> name = new ArrayList<>();
+        // ArrayList<DataType> name = new ArrayList<>();
 
         // ! Create arraylist
 
@@ -34,9 +34,27 @@ public class arrlst {
         System.out.println(lst3);
         // Get Operation
 
-        int val = list.get(3);
+        int val = list.get(1);
         System.out.println(val);
 
+        // ! delete peration
+        
+        list.remove(3);
+        System.out.println(list);
+
+        // ! update operation
+        list.set(2, 100);
+        System.out.println(list);
+
+        // ! contain element
+        System.out.println(list.contains(100));
+        
+        // ! size operation
+        int size = list.size();
+        System.out.println(size);
+
+        list.add(1, 2002);
+        System.out.println(list);
 
     }
 
