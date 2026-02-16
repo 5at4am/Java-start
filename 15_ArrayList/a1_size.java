@@ -48,6 +48,18 @@ public class a1_size {
         swap(lst1, 1, 3);
         System.out.println(lst1);
 
+
+        // fix Sort an array
+        // * we use Collections modele from java.util.Collections;
+        // * we use Collection.sort(list);
+
+        Collections.sort(lst1);
+        System.out.println("this is the sorted ArrayList : " + lst1);
+        
+        // fix sort an ArrayList in reverse order
+        Collections.sort(lst1, Collections.reverseOrder());
+        System.out.println("sorted ArrayList in reverse order : " + lst1);
+
     }
     
     public static void swap(ArrayList<Integer> list , int i, int j) {
