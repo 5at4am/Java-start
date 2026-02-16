@@ -29,9 +29,9 @@ public class A2_multiD {
         main.add(List3);
 
         for (int i = 0; i < main.size(); i++) {
-            ArrayList<Integer> temp = main.get(i);
-            for (int j = 0; j < temp.size(); j++) {
-                System.out.print(temp.get(j) + " ");
+            ArrayList<Integer> current = main.get(i);
+            for (int j = 0; j < current.size(); j++) {
+                System.out.print(current.get(j) + " ");
             }
         }
         // System.out.println(main);
