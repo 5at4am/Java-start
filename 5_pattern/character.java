@@ -27,7 +27,7 @@ public class character {
         Scanner sc = new Scanner(System.in);
         System.out.print("enter the number : ");
         int n = sc.nextInt();
-        char ch = 'A';
+        char ch = 'a';
         for (int i = 1; i <= n; i++) {
             for (char j = 1; j <= i; j++) {
 

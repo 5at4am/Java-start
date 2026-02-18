@@ -22,7 +22,7 @@ public class max_subarray {
         }
         System.out.println("MAximum sum  = " + max);
     }
-
+    
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int num[] = { 1, -2, 6, -1, 3 };
