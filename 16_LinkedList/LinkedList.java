@@ -100,12 +100,14 @@ public class LinkedList {
         if (size == 1) {
             int val = head.data;
             head = tail = null;
+            size = 0;
 
             System.out.println("you linkedlist is now empty ");
             return val;
         }
         int val = head.data;
         head = head.next;
+        size--;
         return val;
 
     }
@@ -128,6 +130,9 @@ public class LinkedList {
         ll.add(3, 7);
 
         // print ll
+        ll.print();
+        System.out.println(ll.size);
+        ll.removeFirst();
         ll.print();
         System.out.println(ll.size);
 
