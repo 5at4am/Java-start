@@ -124,13 +124,66 @@ public class LinkedList {
         }
         Node prev = head;
         for (int i = 0; i < size - 2; i++) {
-            prev = head.next;
+            prev = prev.next;
         }
         int val = prev.next.data;
         prev.next = null;
         tail = prev;
         size--;
         return val;
+
+    }
+
+    // note: Search in LinkedList O(n)
+    public int search(int key) {
+        Node temp = head;
+        int i = 0;
+        while (temp != null) {
+            if (temp.data == key) {
+                return i;
+            }
+            temp = temp.next;
+            i++;
+
+        }
+        return -1;
+
+    }
+
+    // note: Search with (Resursion)
+    public int helper(Node head, int key) {
+        if (head == null) {
+            return -1;
+        }
+        if (head.data == key) {
+            return 0;
+        }
+        int idx = helper(head.next, key);
+        if (idx == -1) {
+            return -1;
+        }
+        return idx + 1;
+    }
+
+    public int searchRec(int key) {
+        return helper(head, key);
+    }
+    //  note: reverse an array 
+    public int reverse() {
+        Node prev= null;
+        Node curr= tail = head;
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr= next;
+        }
+        head = prev;
+
+
+        return -1;
 
     }
 
@@ -151,12 +204,23 @@ public class LinkedList {
         // add middle
         ll.add(3, 7);
 
-        // print ll
+        // // print ll
         ll.print();
-        System.out.println(ll.size);
-        ll.removeFirst();
+        // System.out.println(ll.size);
+        // ll.removeFirst();
+        // ll.print();
+        // System.out.println(ll.size);
+        // ll.removeLast();
+        // ll.print();
+        // System.out.println(ll.size);
+        // System.out.println("at indext " + ll.search(3));
+        // ll.print();
+        // System.out.println(ll.size);
+        // System.out.println("at indext " + ll.search(10));
+
+        // System.out.println(ll.searchRec(3));
+        ll.reverse();
         ll.print();
-        System.out.println(ll.size);
 
     }
 
