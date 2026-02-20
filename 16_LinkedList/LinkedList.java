@@ -168,24 +168,52 @@ public class LinkedList {
     public int searchRec(int key) {
         return helper(head, key);
     }
-    //  note: reverse an array 
+
+    // note: reverse an array
     public int reverse() {
-        Node prev= null;
-        Node curr= tail = head;
+        Node prev = null;
+        Node curr = tail = head;
         Node next;
 
-        while(curr != null){
+        while (curr != null) {
             next = curr.next;
             curr.next = prev;
             prev = curr;
-            curr= next;
+            curr = next;
         }
         head = prev;
-
 
         return -1;
 
     }
+
+    // note: find and remove nth node from end using iterative approach
+    public void deletenth(int n){
+        int sz =0;
+        Node temp = head;
+        while(temp!= null){
+            temp = temp.next;
+            sz++;
+        }
+        if(n == sz){
+            head= head.next;
+            return;
+        }
+        // sz - n
+        int i = 0;
+        int iFind = sz-n;
+        while(i<iFind){
+            prev = prev.next;
+            i++;
+        }
+
+        prev.next = prev.next.next;
+        return;
+
+
+
+    }
+
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -219,7 +247,7 @@ public class LinkedList {
         // System.out.println("at indext " + ll.search(10));
 
         // System.out.println(ll.searchRec(3));
-        ll.reverse();
+        ll.deletenth();
         ll.print();
 
     }
