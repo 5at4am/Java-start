@@ -200,8 +200,9 @@ public class LinkedList {
             return;
         }
         // sz - n
-        int i = 0;
+        int i = 1;
         int iFind = sz - n;
+        Node prev = head;
         while (i < iFind) {
             prev = prev.next;
             i++;
@@ -212,6 +213,53 @@ public class LinkedList {
 
     }
 
+    // note: check if LinkedList is palindrome or not
+    public Node findMid(Node head) {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next; // +1
+            fast = fast.next.next; // +2
+        }
+        return slow; // slow is middle node
+
+    }
+
+    public boolean check_palindrome() {
+        if (head == null || head.next == null) {
+            return true;
+        }
+
+        // find mid
+        Node mid = findMid(head);
+
+        // reverse the 2nd half
+
+        Node curr = mid;
+        Node next;
+        Node prev = null;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev; // right half head
+        Node left = head;
+
+        // check left half and right half
+        while (right != null) {
+            if (left.data != right.data) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+
+        }
+        return true;
+
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
@@ -219,15 +267,15 @@ public class LinkedList {
 
         // add first
         ll.addFirst(3);
-        ll.addFirst(4);
         ll.addFirst(2);
+        ll.addFirst(1);
 
         // add last
+        ll.addLast(2);
         ll.addLast(1);
-        ll.addLast(8);
 
         // add middle
-        ll.add(3, 7);
+        ll.add(3, 3);
 
         // // print ll
         ll.print();
@@ -244,9 +292,9 @@ public class LinkedList {
         // System.out.println("at indext " + ll.search(10));
 
         // System.out.println(ll.searchRec(3));
-        ll.deletenth();
-        ll.print();
 
+        // ll.deletenth(5);
+        System.out.println(ll.check_palindrome());
     }
 
 }
