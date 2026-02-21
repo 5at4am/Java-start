@@ -231,7 +231,7 @@ public class LinkedList {
         }
 
         // find mid
-        Node mid = findMid(head);
+        Node mid = findMid(head); 
 
         // reverse the 2nd half
 
@@ -295,6 +295,7 @@ public class LinkedList {
 
         // ll.deletenth(5);
         System.out.println(ll.check_palindrome());
+        
     }
 
 }
