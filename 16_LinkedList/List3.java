@@ -13,9 +13,11 @@ public class List3 {
         ll.addFirst(0);
         ll.addFirst(2);
         ll.add(2, 21);
-        
 
         System.out.println(ll);
+        // access element
+        System.out.println(ll.get(2));
+
         // Remove linkedlist
         ll.remove();
         ll.removeFirst();
@@ -24,8 +26,6 @@ public class List3 {
         ll.remove(Integer.valueOf(21));
 
         System.out.println(ll);
-
-        // access element
 
     }
 
