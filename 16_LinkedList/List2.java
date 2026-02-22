@@ -154,7 +154,7 @@ public class List2 {
         while(slow != fast){
             prev = fast;
             slow = slow.next;
-            fast = fast.next
+            fast = fast.next;
         } 
 
         // remove cycle -> last.next = null
@@ -168,8 +168,11 @@ public class List2 {
         head.next = new Node(2);
         head.next.next = new Node(3);
         head.next.next.next = new Node(4); 
-        // head.next.next.next = head.next;
-       
+        head.next.next.next = head.next;
+
+        
+        System.out.println(isCycle());
+        del_loop();
         System.out.println(isCycle());
 
         // ll.print();
