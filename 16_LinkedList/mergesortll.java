@@ -109,7 +109,7 @@ public class mergesortll {
 
     }
 
-
+//  main function
     public static void main(String[] args) {
         mergesortll ll = new mergesortll();
         ll.addFirst(1);
