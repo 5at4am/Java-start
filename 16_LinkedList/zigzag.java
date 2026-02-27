@@ -42,8 +42,40 @@ public class zigzag {
 
     }
 
+    private Node reverse(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
 
-    
+        // find mid
+        Node mid = mid(head);
+
+        // reverse the 2nd half
+
+        Node curr = mid;
+        Node next;
+        Node prev = null;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev; // right half head
+        Node left = head;
+
+        // check left half and right half
+        while (right != null) {
+            if (left.data != right.data) {
+            }
+            left = left.next;
+            right = right.next;
+
+        }
+
+        return head;
+
+    }
 
     // Print the linkedlist
     public void print() {
