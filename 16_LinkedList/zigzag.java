@@ -42,7 +42,33 @@ public class zigzag {
 
     }
 
+
+    
+
+    // Print the linkedlist
+    public void print() {
+        if (head == null) {
+            System.out.println("Linkedlist is empty");
+            return;
+        }
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+
+    }
+
     public static void main(String[] args) {
+        zigzag ll = new zigzag();
+        ll.addFirst(1);
+        ll.addFirst(2);
+        ll.addFirst(3);
+        ll.addFirst(4);
+        ll.addFirst(5);
+        System.out.println("Before Sort:");
+        ll.print();
 
     }
 
