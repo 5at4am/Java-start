@@ -47,33 +47,50 @@ public class zigzag {
             return head;
         }
 
-        // find mid
-        Node mid = mid(head);
-
         // reverse the 2nd half
 
-        Node curr = mid;
-        Node next;
         Node prev = null;
+        Node curr = head;
+
         while (curr != null) {
-            next = curr.next;
+            Node next = curr.next;
             curr.next = prev;
             prev = curr;
             curr = next;
         }
-        Node right = prev; // right half head
-        Node left = head;
 
-        // check left half and right half
-        while (right != null) {
-            if (left.data != right.data) {
-            }
-            left = left.next;
-            right = right.next;
+        return prev;
+    }
 
+    public Node merge(Node h1, Node h2) {
+
+        Node nextL, nextR;
+
+        while (h1 != null && h2 != null) {
+            nextL = h1.next;
+            h1.next = h2;
+            nextR = h2.next;
+            h2.next = nextL;
+
+            h1 = nextL;
+            h2 = nextR;
         }
-
         return head;
+
+    }
+
+    public Node zz(Node head) {
+
+        // find mid
+        Node mid = mid(head);
+
+        // reverse 2nd Half
+        Node rev = reverse(mid.next);
+
+        mid.next = null;
+
+        // alternate merge
+        return merge(head, rev);
 
     }
 
@@ -94,12 +111,16 @@ public class zigzag {
 
     public static void main(String[] args) {
         zigzag ll = new zigzag();
-        ll.addFirst(1);
-        ll.addFirst(2);
-        ll.addFirst(3);
-        ll.addFirst(4);
         ll.addFirst(5);
-        System.out.println("Before Sort:");
+        ll.addFirst(4);
+        ll.addFirst(3);
+        ll.addFirst(2);
+        ll.addFirst(1);
+        System.out.println("Before:");
+        ll.print();
+
+        ll.head = ll.zz(ll.head);
+        System.out.println("After:");
         ll.print();
 
     }
