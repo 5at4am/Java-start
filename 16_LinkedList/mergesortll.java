@@ -43,7 +43,7 @@ public class mergesortll {
     }
 
     public Node merge(Node head1, Node head2) {
-        // temp node to referance 
+        // temp node to referance
         Node mergedll = new Node(-1);
         Node temp = mergedll;
 
@@ -95,7 +95,6 @@ public class mergesortll {
 
     }
 
-
     // Print the linkedlist
     public void print() {
         if (head == null) {
@@ -111,7 +110,7 @@ public class mergesortll {
 
     }
 
-//  main function
+    // main function
     public static void main(String[] args) {
         mergesortll ll = new mergesortll();
         ll.addFirst(1);
