@@ -1,4 +1,4 @@
-public class doublell {
+public class revddl {
 
     public class Node {
         int data;
@@ -85,6 +85,23 @@ public class doublell {
 
     }
 
+    // reverse a linkedlist
+    public void reverse() {
+        Node curr = head;
+        Node prev = null;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     // print the LL
     public void print() {
         Node temp = head;
@@ -97,15 +114,18 @@ public class doublell {
     }
 
     public static void main(String[] args) {
-        doublell dll = new doublell();
+        revddl dll = new revddl();
         dll.addFirst(3);
         dll.addFirst(2);
         dll.addFirst(1);
         dll.addLast(4);
         dll.addLast(5);
-        dll.removeFirst();
-        dll.removeLast();
+
+        dll.print();
+        dll.reverse();
+
         dll.print();
 
     }
+
 }
