@@ -17,7 +17,7 @@ public class nextGreater {
             } else {
                 nxt[i] = arr[s.peek()];
             }
-            // push el
+            // push el 
             s.push(i);
 
             for (int j = 0; j < nxt.length; j++) {
