@@ -3,6 +3,7 @@ import java.util.*;
 public class nextGreater {
     public static void main(String[] args) {
         int arr[] = { 6, 8, 0, 1, 3 };
+        // answer [8,-1,1,3,-1]
         Stack<Integer> s = new Stack<>();
         int nxt[] = new int[arr.length];
         for (int i = arr.length - 1; i >=0; i--) {
