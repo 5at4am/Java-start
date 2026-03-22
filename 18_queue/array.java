@@ -37,6 +37,7 @@ public class array {
                 arr[i] = arr[i + 1];
 
             }
+            rear = rear - 1;
             return front;
         }
 
