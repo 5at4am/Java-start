@@ -59,6 +59,7 @@ public class array {
         q.add(3);
         q.add(4);
         q.add(5);
+        q.add(6);
 
         while (!q.isEmpty()) {
             System.out.println(q.peek());
