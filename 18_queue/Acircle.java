@@ -56,7 +56,7 @@ public class Acircle {
                 System.out.println("empty");
                 return -1;
             }
-            return arr[0];
+            return arr[front];
         }
 
     }
