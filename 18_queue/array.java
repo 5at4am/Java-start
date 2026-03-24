@@ -10,7 +10,7 @@ public class array {
             rear = -1;
         }
 
-        // * is empty
+        // * is empty 
         public static boolean isEmpty() {
             return rear == -1;
         }
@@ -56,7 +56,8 @@ public class array {
         Queue q = new Queue(5);
         q.add(1);
         q.add(2);
-        q.add(3);
+        q.add(9);
+        q.add(1);
 
 
         while (!q.isEmpty()) {
