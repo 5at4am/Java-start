@@ -49,7 +49,7 @@ public class stack_2 {
         q.add(4);
 
         while (!q.isEmpty()) {
-            System.out.println(q.remove()\);
+            System.out.println(q.remove());
         }
 
     }
