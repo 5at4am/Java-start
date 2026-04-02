@@ -1,11 +1,10 @@
-import java.util.ArrayList;
-import javal.util.*;
+import java.util.*;
 
 public class coin {
     public static void main(String[] args) {
-        int num[] = { 1, 2, 5, 10, 20, 50, 100, 500, 2000 };
-        Arrays.sort(num, Comarator.reverseOrder());
-        int amount = 590;
+        Integer num[] = { 1, 2, 5, 10, 20, 50, 100, 500, 2000 };
+        Arrays.sort(num, Comparator.reverseOrder());
+        int amount = 1590;
         int count = 0;
         ArrayList<Integer>  ans  = new ArrayList<>();
         for (int i = 0; i < num.length; i++) {
