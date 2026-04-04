@@ -37,6 +37,25 @@ public class one {
             preorder(root.left);
             preorder(root.right);
         }
+
+        public static void inorder(Node root) {
+            if (root == null) {
+                return;
+            }
+            inorder(root.left);
+            System.out.print(root.data + " ");
+            inorder(root.right);
+        }
+        
+        public static void postorder(Node root) {
+            if (root == null) {
+                return;
+            }
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.data + " ");
+        }
+        
     }
     
     public static void main(String[] args) {
@@ -44,8 +63,16 @@ public class one {
         BT bt = new BT();
         Node root = bt.Build(nodes);
         System.out.println(root.data);
+        System.out.println("Preorder Traversal");
 
         bt.preorder(root);
+        System.out.println();
+        System.out.println("Inorder Traversal");
+        bt.inorder(root);
+        System.out.println();
+        System.out.println("Postorder Traversal");
+        bt.postorder(root);
+
     }
     
 }
