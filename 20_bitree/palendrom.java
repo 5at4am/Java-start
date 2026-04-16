@@ -1,6 +1,6 @@
 public class palendrom {
 
-    public class int check(int arr[]){
+    public static int check(int arr[]){
         
     }
     public static void main(String[] args) {
