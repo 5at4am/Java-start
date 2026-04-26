@@ -320,7 +320,7 @@ public class rev {
 
    public static void ar(int arr[], int i, int n) {
       if (i >= n)
-         return;
+        return;
 
       swap(arr, i, n);
       ar(arr, i + 1, n - 1);
