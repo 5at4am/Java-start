@@ -9,6 +9,8 @@ public class search {
         if(root == null) return null;
         if(root.data == k) return root;
 
+        
+
     }
 
 
