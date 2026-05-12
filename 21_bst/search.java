@@ -11,13 +11,14 @@ public class search {
     }
 
 
-    
+
     public static void search(Node root, int k) {
         if(root == null) return null;
         if(root.data == k) return root;
     }
     public static void main(String[] args) {
         int new[] = {1,2,3,4,5,6,7,8};
+        // new line too work with
 
     }
 }
