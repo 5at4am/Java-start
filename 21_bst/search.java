@@ -10,6 +10,8 @@ public class search {
         }
     }
 
+
+    
     public static void search(Node root, int k) {
         if(root == null) return null;
         if(root.data == k) return root;
