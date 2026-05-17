@@ -58,19 +58,14 @@ public class a {
         int sl = Integer.MIN_VALUE;
         for(int i = 0; i<arr.length;i++){
             if(arr[i]>l){
+                sl = l;
                 l = arr[i];
 
-            }
-            if(arr[i]<l and arr[i]>sl){
+            }else if(arr[i]>sl && arr[i]!=l){
                 sl = arr[i];
             }
         }
-        if(sl==Integer.MIN_VALUE){
-            return -1;
-        }
-        else{
-            return sl;
-        }
+        return sl;
     }
 
     public static void main(String[] args) {
@@ -78,7 +73,7 @@ public class a {
         int[] arr1= {0,1,1,2,2,2,2,3,3,4};
         
         // ! traversal
-        traverse(arr);
+        // traverse(arr);
 
         // ! insertion
         // insert(arr, 2, 7);
@@ -96,7 +91,7 @@ public class a {
         // RemoveDuplicate(arr1);
 
         // second Largest
-        secondLargest(arr1);
+        System.out.println(secondLargest(arr1));
 
 
         
