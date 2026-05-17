@@ -53,6 +53,25 @@ public class a {
         }
         
     }
+    public static int secondLargest(int[] arr){
+        int l = Integer.MIN_VALUE;
+        int sl = Integer.MIN_VALUE;
+        for(int i = 0; i<arr.length;i++){
+            if(arr[i]>l){
+                l = arr[i];
+
+            }
+            if(arr[i]<l and arr[i]>sl){
+                sl = arr[i];
+            }
+        }
+        if(sl==Integer.MIN_VALUE){
+            return -1;
+        }
+        else{
+            return sl;
+        }
+    }
 
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 4, 5, 6 };
@@ -74,7 +93,10 @@ public class a {
         // slidingWindow(arr,3);
 
         // ! duplicate
-        RemoveDuplicate(arr1);
+        // RemoveDuplicate(arr1);
+
+        // second Largest
+        secondLargest(arr1);
 
 
         
