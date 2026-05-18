@@ -29,13 +29,52 @@ public class two_pointer {
                 }
                 while (left < right && arr[right] == arr[right - 1]) {
                     right--;
-                } 
+                }
                 left++;
                 right--;
             } else if (sum < target) {
                 left++;
             } else {
                 right--;
+            }
+        }
+    }
+
+    // triplet sum == 0
+    public static void triplet_sum(int[] arr) {
+        int n = arr.length - 1;
+        for (int i = 0; i < n - 1; i++) {
+
+            if (i > 0 && arr[i] == arr[i - 1]) {
+                continue;
+            }
+            if (arr[i] > 0) {
+                break;
+            }
+
+            int left = i + 1;
+            int right = n;
+            int sum = -1 * arr[i];
+            while (left < right) {
+                int s = arr[left] + arr[right];
+                if (s == sum) {
+                    System.out.println(arr[i] + " " + arr[left] + " " + arr[right]);
+                    right--;
+                    left++;
+                    // to avoid duplicate we use this while loop for left and right
+                    while (left < right && arr[left] == arr[left - 1]) {
+                        left++;
+                    }
+                    while (left < right && arr[right] == arr[right + 1]) {
+                        right--;
+                    }
+
+                } else if (s < sum) {
+                    left++;
+                } else {
+                    right--;
+                }
+
             }
         }
     }
@@ -66,10 +105,15 @@ public class two_pointer {
         // System.out.print(arr[i] + " ");
         // })
 
-        int[] arr = { 1, 1, 2, 2, 4, 4, 5, 5, 7, 7, 8, 8, 9, 9, };
-        int target = 9;
-        two_sum_with_duplicate(arr, target);
+        // int[] arr = { 1, 1, 2, 2, 4, 4, 5, 5, 7, 7, 8, 8, 9, 9, };
+        // int target = 9;
+        // two_sum_with_duplicate(arr, target);
         // System.out.println("Indices: " + result[0] + ", " + result[1]);
+
+        // int[] arr = { -1, 0, 1, 2, -1, 4 };
+        // triplet_sum(arr);
+
+        
 
     }
 }
