@@ -142,7 +142,6 @@ public class two_pointer {
 
         // int[] arr = { -1, 0, 1, 2, -1, 4 };
         // triplet_sum(arr);
-      
         // int[] arr = { -3,-2,-1,0,0,1,2,3};
         // closest_3sum(arr, 3);
 
