@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class two_pointer {
 
     public static int[] twoSum(int[] numbers, int target) {
@@ -121,7 +121,53 @@ public class two_pointer {
             f++;
         }
     }
+    public static void smallest(int[] arr, int target) {
+        Arrays.sort(arr);
+        int n = arr.length - 1;
+        int ans = 0;
+        for(int i=0;i<n-1;i++){
+            int left = i+1;
+            int right =n;
+            while(left<right){
+                int sum = arr[i]+arr[left]+arr[right];
+                if(sum >=target){
+                    right--;
+                }else{
+                    ans = ans+(right-left);
+                    left++;
+                }
+                System.out.println("->"+arr[i]+" "+arr[left]+" "+arr[right] + " = "+ans);
+            }
+        }
+        System.out.println(ans);
+        
+    }
 
+    public static void color(int arr[]){
+            
+        int start = 0;
+        int mid = 0;
+        int end = arr.length-1;
+        while(mid <=end){
+                
+                if(arr[mid]==0){
+                    int temp = arr[start];
+                    arr[start++] = arr[mid];
+                    arr[mid++] = temp;
+                    start++;
+                    mid++;
+                }else if( arr[mid] ==1){
+                    mid++;
+                }else{
+                    int temp = arr[mid];
+                    arr[mid] = arr[end];
+                    arr[end--] = temp;
+                }
+            }
+                 
+        }
+        
+    
     public static void main(String[] args) {
 
         // int[] arr = { 2, 7, 11, 15 };
@@ -145,6 +191,18 @@ public class two_pointer {
         // int[] arr = { -3,-2,-1,0,0,1,2,3};
         // closest_3sum(arr, 3);
 
+        // int[] arr = {2,7,4,9,5,1,3};
+        // smallest(arr, 10);
+
+        int arr[] = {2,0,2,1,1,0};
+        for(int i = 0; i < arr.length; i++){
+            System.out.print(arr[i]);
+        }
+        System.out.println();
+        color(arr);
+        for(int i = 0; i < arr.length; i++){
+            System.out.print(arr[i]);
+        }
         
 
     }
