@@ -79,6 +79,36 @@ public class two_pointer {
         }
     }
 
+
+    public static void closest_3sum(int[] arr, int target){
+        int n = arr.length-1;
+        int max = Integer.MAX_VALUE;
+        int res = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            int left = i + 1;
+            int right = n;
+            
+            while (left<right) {
+                int sum = arr[i]+arr[left]+arr[right];
+                if( sum == target){
+                // System.out.println("->"+arr[i]+" "+arr[left]+" "+arr[right]);
+                System.out.println("sum->"+sum);
+                left++;
+                right--;
+                }else if(Math.abs(target-sum)<max){
+                    max = Math.abs(target-sum);
+                    res = sum;
+                    left++;
+                }else{
+                    right--;
+                }
+            }
+            // System.out.println(">>"+arr[i]+" "+arr[left]+" "+arr[right]);
+        }
+        System.out.println("total result -> "+res);
+    }
+
     public static void remove_duplicate(int[] arr) {
 
         int s = arr[0];
@@ -112,6 +142,9 @@ public class two_pointer {
 
         // int[] arr = { -1, 0, 1, 2, -1, 4 };
         // triplet_sum(arr);
+      
+        // int[] arr = { -3,-2,-1,0,0,1,2,3};
+        // closest_3sum(arr, 3);
 
         
 
