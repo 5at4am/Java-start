@@ -31,27 +31,49 @@ public class sliding_window {
 
     }
 
-    public static void sum(int[] arr, int k){
+    public static void sum(int[] arr, int k) {
         int start = 0;
         int max = 0;
-        for (int i = 0; i < arr.length-k; i++) {
+        for (int i = 0; i < arr.length - k; i++) {
             int sum = 0;
-            for (int j = start; j < start+k; j++) {
+            for (int j = start; j < start + k; j++) {
                 sum = sum + arr[j];
             }
             max = Math.max(max, sum);
             start++;
         }
         System.out.println(max);
-        
+
+    }
+
+    public static void max(int[] arr, int k) {
+        int start = 0, end = k, res = 0, sum = 0;
+        for (int i = start; i < end; i++) {
+            sum += arr[i];
+        }
+        res = sum;
+        while (end < arr.length) {
+            
+            sum -= arr[start ];
+            start++;
+            
+            sum += arr[end];
+            end++;
+
+            res = Math.max(res, sum);
+
+        }
+
+        System.out.println(res);
+
     }
 
     public static void main(String[] args) {
 
-        int[] arr = { 2, 4, 1, 7, 3 };
-        int k = 3;
+        int[] arr = { 2, 1, 5, 1, 3, 2 };
+        int k = 4;
         // window(arr, k);
         // subarray(arr);
-        sum(arr, k);
+        max(arr, k);
     }
 }
