@@ -154,8 +154,8 @@ public class two_pointer {
                     int temp = arr[start];
                     arr[start++] = arr[mid];
                     arr[mid++] = temp;
-                    start++;
-                    mid++;
+                    // start++;
+                    // mid++;
                 }else if( arr[mid] ==1){
                     mid++;
                 }else{
