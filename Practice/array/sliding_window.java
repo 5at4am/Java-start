@@ -3,6 +3,7 @@ public class sliding_window {
     public static void window(int[] arr, int k) {
         int windowSum = 0, maxSum = 0;
 
+        
         for (int i = 0; i < k; i++)
             windowSum += arr[i];
         maxSum = windowSum;
@@ -31,7 +32,7 @@ public class sliding_window {
 
     }
 
-    public static void sum(int[] arr, int k) {
+    public static void sum(int[] arr, int k) { // brute force
         int start = 0;
         int max = 0;
         for (int i = 0; i < arr.length - k; i++) {
@@ -53,10 +54,10 @@ public class sliding_window {
         }
         res = sum;
         while (end < arr.length) {
-            
-            sum -= arr[start ];
+
+            sum -= arr[start];
             start++;
-            
+
             sum += arr[end];
             end++;
 
@@ -67,13 +68,40 @@ public class sliding_window {
         System.out.println(res);
 
     }
+    
+    public static void maxSum(int[] arr, int k) {
+        int low = 0, high = k, sum = 0;
+
+        for (int i = 0; i < high; i++) {
+            sum += arr[i];
+        }
+        // System.out.println(sum);
+
+        int res = sum;
+
+        while (high < arr.length) {
+            
+            // handle low 1st
+            sum -= arr[low];
+            low++;
+            // handle high
+            // if (high == arr.length) {
+            //     break;
+            // }
+            sum += arr[high];
+            high++;
+            res = Math.max(sum, res);
+        }
+        System.out.println(res);
+
+    }
 
     public static void main(String[] args) {
 
-        int[] arr = { 2, 1, 5, 1, 3, 2 };
-        int k = 4;
+        int[] arr = { 3, 5, 6, 2, 4, 7, 1 };
+        int k = 3;
         // window(arr, k);
         // subarray(arr);
-        max(arr, k);
+        // maxSum(arr, k);
     }
 }
