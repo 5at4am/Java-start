@@ -1,9 +1,11 @@
+import java.util.HashMap;
+import java.util.HashSet;
+
 public class sliding_window {
 
     public static void window(int[] arr, int k) {
         int windowSum = 0, maxSum = 0;
 
-        
         for (int i = 0; i < k; i++)
             windowSum += arr[i];
         maxSum = windowSum;
@@ -68,7 +70,7 @@ public class sliding_window {
         System.out.println(res);
 
     }
-    
+
     public static void maxSum(int[] arr, int k) {
         int low = 0, high = k, sum = 0;
 
@@ -80,28 +82,79 @@ public class sliding_window {
         int res = sum;
 
         while (high < arr.length) {
-            
+
             // handle low 1st
             sum -= arr[low];
             low++;
             // handle high
             // if (high == arr.length) {
-            //     break;
+            // break;
             // }
             sum += arr[high];
             high++;
-            res = Math.max(sum, res);   // change the max -> min for minimum subarray sum 
+            res = Math.max(sum, res); // change the max -> min for minimum subarray sum
         }
         System.out.println(res);
 
     }
 
+    public static void min_siz(int[] arr, int target) {
+        int low = 0, high = 0, sum = 0;
+        int res = Integer.MAX_VALUE;
+        while (high < arr.length) {
+            sum += arr[high];
+            while (sum >= target) {
+                int len = high - low + 1;
+                res = Math.min(res, len);
+                sum -= arr[low];
+                low++;
+            }
+            high++;
+        }
+        System.out.println(res);
+    }
+
+    public static void distinct_char(String str, int k) {
+        // if (k == 0)
+        //     return 0;
+
+        int low = 0;
+        int res = 0;
+        HashMap<Character,Integer> map = new HashMap<>();
+
+        for (int high = 0; high < str.length(); high++) {
+            char c = str.charAt(high);
+            // Correct way to increment count in a HashMap
+            map.put(c, map.getOrDefault(c, 0) + 1);
+            while (map.size() > k) {
+                char leftChar = str.charAt(low);
+                map.put(leftChar, map.get(leftChar) - 1);
+
+                // Check the frequency count, not the character value
+                if (map.get(leftChar) == 0) {
+                    map.remove(leftChar);
+                }
+                low++;
+
+            }
+            int len = high - low + 1;
+            res = Math.max(res, len);
+
+        }
+        System.out.println(res);
+    }
+
     public static void main(String[] args) {
 
         int[] arr = { 3, 5, 6, 2, 4, -1, 1 };
-        int k = 3;
+        String str = "aaabbccd";
+        int k = 2;
         // window(arr, k);
         // subarray(arr);
-        maxSum(arr, k);
+        // maxSum(arr, k);
+        // sum(arr, k);
+        // max(arr, k);
+        // min_siz(arr, 11);
+        distinct_char(str, k);
     }
 }
