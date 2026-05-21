@@ -90,7 +90,7 @@ public class sliding_window {
             // }
             sum += arr[high];
             high++;
-            res = Math.max(sum, res);
+            res = Math.max(sum, res);   // change the max -> min for minimum subarray sum 
         }
         System.out.println(res);
 
@@ -98,10 +98,10 @@ public class sliding_window {
 
     public static void main(String[] args) {
 
-        int[] arr = { 3, 5, 6, 2, 4, 7, 1 };
+        int[] arr = { 3, 5, 6, 2, 4, -1, 1 };
         int k = 3;
         // window(arr, k);
         // subarray(arr);
-        // maxSum(arr, k);
+        maxSum(arr, k);
     }
 }
