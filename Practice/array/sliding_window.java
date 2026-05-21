@@ -120,7 +120,7 @@ public class sliding_window {
 
         int low = 0;
         int res = 0;
-        HashMap<Character,Integer> map = new HashMap<>();
+        HashMap<Character, Integer> map = new HashMap<>();
 
         for (int high = 0; high < str.length(); high++) {
             char c = str.charAt(high);
@@ -144,6 +144,38 @@ public class sliding_window {
         System.out.println(res);
     }
 
+    public static void duplicate(String str) {
+        // if (k == 0)
+        // return 0;
+
+        int low = 0;
+        int res = Integer.MAX_VALUE;
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (int high = 0; high < str.length(); high++) {
+            char c = str.charAt(high);
+            // Correct way to increment count in a HashMap
+            map.put(c, map.getOrDefault(c, 0) + 1);
+            int k = high - low + 1;
+            while (map.size() == k) {
+                char leftChar = str.charAt(low);
+                map.put(leftChar, map.get(leftChar) - 1);
+
+                // Check the frequency count, not the character value
+                if (map.get(leftChar) == 0) {
+                    map.remove(leftChar);
+                }
+                low++;
+                k= high-low+1
+
+            }
+            int len = high - low + 1;
+            res = Math.max(res, len);
+
+        }
+        System.out.println(res);
+    }
+
     public static void main(String[] args) {
 
         int[] arr = { 3, 5, 6, 2, 4, -1, 1 };
@@ -155,6 +187,7 @@ public class sliding_window {
         // sum(arr, k);
         // max(arr, k);
         // min_siz(arr, 11);
-        distinct_char(str, k);
+        // distinct_char(str, k);
+        duplicate(str);
     }
 }
