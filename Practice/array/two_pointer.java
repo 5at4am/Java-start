@@ -163,9 +163,25 @@ public class two_pointer {
                     arr[mid] = arr[end];
                     arr[end--] = temp;
                 }
-            }
-                 
         }
+                 
+    }
+
+    public static void arange01(int[] arr){
+        int slow = 0, fast = 0;
+        while(fast<arr.length){
+            if(arr[fast]==1){
+                fast++;
+            }else{
+                int temp = arr[slow];
+                arr[slow] = arr[fast];
+                arr[fast] = temp;
+                slow++;
+                fast++;
+            }
+        }
+
+    }
         
     
     public static void main(String[] args) {
@@ -194,16 +210,16 @@ public class two_pointer {
         // int[] arr = {2,7,4,9,5,1,3};
         // smallest(arr, 10);
 
-        int arr[] = {2,0,2,1,1,0};
-        for(int i = 0; i < arr.length; i++){
-            System.out.print(arr[i]);
-        }
-        System.out.println();
-        color(arr);
-        for(int i = 0; i < arr.length; i++){
-            System.out.print(arr[i]);
-        }
+        // int arr[] = {2,0,2,1,1,0};
+        // for(int i = 0; i < arr.length; i++){
+        //     System.out.print(arr[i]);
+        // }
         
-
+        int[] arr = { 0, 0, 1, 0, 1, 1, 0, 1, 0 };
+        
+        arange01(arr);
+        for(int i = 0; i < arr.length; i++){
+            System.out.print(arr[i]);
+        }
     }
 }
