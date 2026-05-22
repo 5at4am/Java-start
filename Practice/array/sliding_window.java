@@ -116,7 +116,7 @@ public class sliding_window {
 
     public static void distinct_char(String str, int k) {
         // if (k == 0)
-        //     return 0;
+        // return 0;
 
         int low = 0;
         int res = 0;
@@ -144,43 +144,80 @@ public class sliding_window {
         System.out.println(res);
     }
 
-    public static void duplicate(String str) {
-        // if (k == 0)
-        // return 0;
+    public static void longestSubstringWithoutDuplicate(String str) {
 
         int low = 0;
-        int res = Integer.MAX_VALUE;
+        int res = 0;
+
         HashMap<Character, Integer> map = new HashMap<>();
 
         for (int high = 0; high < str.length(); high++) {
+
             char c = str.charAt(high);
-            // Correct way to increment count in a HashMap
             map.put(c, map.getOrDefault(c, 0) + 1);
-            int k = high - low + 1;
-            while (map.size() == k) {
+
+            // If duplicate exists, shrink window
+            while (map.get(c) > 1) {
+
                 char leftChar = str.charAt(low);
+
                 map.put(leftChar, map.get(leftChar) - 1);
 
-                // Check the frequency count, not the character value
                 if (map.get(leftChar) == 0) {
                     map.remove(leftChar);
                 }
+
                 low++;
-                k= high-low+1
-
             }
-            int len = high - low + 1;
-            res = Math.max(res, len);
 
+            res = Math.max(res, high - low + 1);
         }
+
         System.out.println(res);
     }
+
+    public static void sameLetter(String str, int k) {
+        int low = 0;
+        int res = 0;
+        int[] f = new int[26];
+        
+        for (int high = 0; high <= str.length() - 1; high++) {
+            f[str.charAt(high) - 'a']++;
+            int len = high - low + 1;
+            int maxFind = maxFind(f);
+            int diff = len - maxFind;
+            while (diff > k) {
+                f[str.charAt(low) - 'a']--;
+                low++;
+                len = high - low + 1;
+                maxFind = maxFind(f);
+                diff = len - maxFind;
+            }
+            res = Math.max(res, len);
+        }
+        for (int i = 0; i < f.length; i++) {
+            // System.out.print(f[i]+" ");
+        }
+        
+        System.out.println(res);
+    
+    }
+
+    public static int maxFind(int[] f) {
+        int max = 0;
+        for (int count : f) {
+            
+        }
+        return max;
+    }
+
+
 
     public static void main(String[] args) {
 
         int[] arr = { 3, 5, 6, 2, 4, -1, 1 };
-        String str = "aaabbccd";
-        int k = 2;
+        // String str = "abcabcd";
+        // int k = 2;
         // window(arr, k);
         // subarray(arr);
         // maxSum(arr, k);
@@ -188,6 +225,10 @@ public class sliding_window {
         // max(arr, k);
         // min_siz(arr, 11);
         // distinct_char(str, k);
-        duplicate(str);
+        // longestSubstringWithoutDuplicate(str);
+
+        String str = "abacde";
+        int k = 2;
+        sameLetter(str, k);
     }
 }
