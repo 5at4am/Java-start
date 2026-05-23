@@ -206,16 +206,34 @@ public class sliding_window {
     public static int maxFind(int[] f) {
         int max = 0;
         for (int count : f) {
-            
+
         }
         return max;
+    }
+    public static void min_window(int[] arr, int target) {
+        int low = 0;
+        int res = 0;
+        for (int high = 0; high < arr.length - 1; high++) {
+            int sum = 0;
+            while (sum < target) {
+                sum += arr[high];
+                high++;
+            }
+            while (sum > target) {
+                sum -= arr[low];
+                low++;
+            }
+            int len = high - low + 1;
+            res = Math.min(res, len);
+        }
+        System.out.println(res);
     }
 
 
 
     public static void main(String[] args) {
 
-        int[] arr = { 3, 5, 6, 2, 4, -1, 1 };
+        // int[] arr = { 3, 5, 6, 2, 4, -1, 1 };
         // String str = "abcabcd";
         // int k = 2;
         // window(arr, k);
@@ -227,8 +245,12 @@ public class sliding_window {
         // distinct_char(str, k);
         // longestSubstringWithoutDuplicate(str);
 
-        String str = "abacde";
-        int k = 2;
-        sameLetter(str, k);
+        // String str = "abacde";
+
+        // sameLetter(str, k);
+
+        int[] arr = { 30, 40, 50, 10, 50 };
+        int k = 80;
+        min_window(arr, k);
     }
 }
