@@ -210,6 +210,7 @@ public class sliding_window {
         }
         return max;
     }
+
     public static void min_window(int[] arr, int target) {
         int low = 0;
         int res = 0;
@@ -227,6 +228,17 @@ public class sliding_window {
             res = Math.min(res, len);
         }
         System.out.println(res);
+    }
+    
+    public static void maxSubstring(String s, String t) {
+        int low = 0, res = 0;
+        int have = 0, need = t.length();
+
+        for (int high = 0; high < s.length(); high++) {
+            
+        }
+         
+        
     }
 
 
@@ -249,8 +261,12 @@ public class sliding_window {
 
         // sameLetter(str, k);
 
-        int[] arr = { 30, 40, 50, 10, 50 };
-        int k = 80;
-        min_window(arr, k);
+        // int[] arr = { 30, 40, 50, 10, 50 };
+        // int k = 80;
+        // min_window(arr, k);
+
+
+
+
     }
 }
