@@ -180,7 +180,7 @@ public class sliding_window {
         int low = 0;
         int res = 0;
         int[] f = new int[26];
-        
+
         for (int high = 0; high <= str.length() - 1; high++) {
             f[str.charAt(high) - 'a']++;
             int len = high - low + 1;
@@ -198,9 +198,9 @@ public class sliding_window {
         for (int i = 0; i < f.length; i++) {
             // System.out.print(f[i]+" ");
         }
-        
+
         System.out.println(res);
-    
+
     }
 
     public static int maxFind(int[] f) {
@@ -229,20 +229,63 @@ public class sliding_window {
         }
         System.out.println(res);
     }
-    
-    public static void maxSubstring(String s, String t) {
-        int low = 0, res = 0;
-        int have = 0, need = t.length();
 
-        for (int high = 0; high < s.length(); high++) {
-            
+    public static void maxSubstring(String s, String t) {
+
+        if (t.length() > s.length()) {
+            System.out.println(0);
+            return;
         }
-         
+
+        HashMap<Character, Integer> window = new HashMap<>();
+        HashMap<Character, Integer> countT = new HashMap<>();
+
+        for (char c : t.toCharArray()) {
+            countT.put(c, countT.getOrDefault(c, 0) + 1);
+        }
+
+        int have = 0;
+        int need = countT.size();
+
+        int reslen = Integer.MAX_VALUE;
+        int l = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+
+            char c = s.charAt(right);
+
+            window.put(c, window.getOrDefault(c, 0) + 1);
+
+            if (countT.containsKey(c)
+                    && window.get(c).equals(countT.get(c))) {
+                have++;
+            }
+
+            while (have == need) {
+
+                int len = right - l + 1;
+                reslen = Math.min(reslen, len);
+
+                char d = s.charAt(l);
+
+                window.put(d, window.get(d) - 1);
+
+                if (countT.containsKey(d)
+                        && window.get(d) < countT.get(d)) {
+                    have--;
+                }
+
+                l++;
+            }
+        }
+
+        if (reslen == Integer.MAX_VALUE) {
+            System.out.println(0);
+        } else {
+            System.out.println(reslen);
+        }
         
     }
-
-
-
     public static void main(String[] args) {
 
         // int[] arr = { 3, 5, 6, 2, 4, -1, 1 };
@@ -265,8 +308,8 @@ public class sliding_window {
         // int k = 80;
         // min_window(arr, k);
 
-
-
+        String s = "ADOBECODEBANC", t = "ABC";
+        maxSubstring(s, t);
 
     }
 }
