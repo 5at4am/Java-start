@@ -1,7 +1,4 @@
     import java.util.*;
-
-    import org.w3c.dom.Node;
-
     public class slowfast {
 
         static class Node {
@@ -13,7 +10,23 @@
                 this.next = null;
             }
         }
+        
+        Node head = null;
+        Node tail = null;
 
+        public static Node addLast(Node head, int data) {
+            Node newNode = new Node(data);
+            if (head == null) {
+                return newNode;
+            }
+            Node curr = head;
+            while (curr.next != null) {
+                curr = curr.next;
+            }
+            curr.next = newNode;
+            return head;
+        }
+        
         public static boolean checkcycle(Node head) {
             Node slow = head;
             Node fast = head;
@@ -26,6 +39,7 @@
             }
             return false;
         }
+        
         public static void startCycle(Node head){
             Node slow = head;
             Node fast = head;
@@ -45,16 +59,41 @@
 
         }
 
+        // check happy number
+        public static boolean happy( int n){
+            int slow = n,fast=getsum(n);
+            while (fast != 1 && slow != fast) {
+                fast = getsum(getsum(fast));
+                slow = getsum(slow);
+            }
+            return fast == 1;
+        }
+        public static int getsum(int n){
+            int sum = 0;
+            while(n>0){
+                int rem = n%10;
+                sum += rem*rem;
+                n = n/10;
+            }
+            return sum;
+        }
         public static void main(String[] args) {
-            Node head = new Node(1);
-            head.next = new Node(2);
-            head.next.next = new Node(3);
-            head.next.next.next = new Node(4);
-            head.next.next.next.next = new Node(3);
-            // Creating cycle
-            head.next.next.next.next = head;
-
+            //  Creating a linked list
+            Node head = null;
+            head = addLast(head, 1);
+            head = addLast(head, 2);
+            head = addLast(head, 3);
+            head = addLast(head, 4);
+            head = addLast(head, 5);
+            head = addLast(head, 6);
+            head = addLast(head, 7);
+            head = addLast(head, 8);
+            head = addLast(head, 9);
+            head = addLast(head, 10);
+            // connect the last node to 4th node
+            // head.next.next.next.next = head.next; // it is for cycle at 4th node from last  
             // System.out.println(checkcycle(head));
-            startCycle(head);
+            // startCycle(head);
+            System.out.println(happy(19));
         }
     }
