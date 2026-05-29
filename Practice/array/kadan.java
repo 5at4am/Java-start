@@ -43,7 +43,7 @@ public class kadan {
         // maxsum(arr);
         int[] arr1 = { -2, 3, -4 };
         minsum(arr);
-        // maxprod(arr1);
+        maxprod(arr1);
 
     }
 }
