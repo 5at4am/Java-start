@@ -34,10 +34,6 @@ public class kadan {
         System.out.println(res);
     }
 
-    
-
-
-
     public static void main(String[] args){
         int[] arr = {-2,1,2,-4,5};
         // maxsum(arr);
