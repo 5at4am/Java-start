@@ -33,13 +33,32 @@ public class kadan {
         }
         System.out.println(res);
     }
+    public static void remove1(int[] arr){
+        int onedel = arr[0];
+        int nodel = arr[0];
+        int res = arr[0];
+        for(int i = 1; i<arr.length;i++){
+            int pnodel = nodel;
+            int podel = onedel;
+            nodel = Math.max(nodel + arr[i], arr[i]);
+            int v2;
+            if(podel == Integer.MIN_VALUE){
+                v2 = arr[i];
+            }else{
+                v2 = podel +arr[i];
+            }
+            onedel = Math.max(v2,pnodel);
+            res = Math.max(res,Math.max(onedel,nodel));
+        }
+        System.out.println(res);
+    }
 
     public static void main(String[] args){
         int[] arr = {-2,1,2,-4,5};
         // maxsum(arr);
         int[] arr1 = { -2, 3, -4 };
-        minsum(arr);
-        maxprod(arr1);
-
+        // minsum(arr);
+        // maxprod(arr1);
+        remove(arr1);
     }
 }
