@@ -59,6 +59,6 @@ public class kadan {
         int[] arr1 = { -2, 3, -4 };
         // minsum(arr);
         // maxprod(arr1);
-        remove(arr1);
+        remove1(arr1);
     }
 }
