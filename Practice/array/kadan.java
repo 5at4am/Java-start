@@ -53,6 +53,10 @@ public class kadan {
         System.out.println(res);
     }
 
+    public static void kadan2(int[] a){
+
+    }
+
     public static void main(String[] args){
         int[] arr = {-2,1,2,-4,5};
         // maxsum(arr);
@@ -60,5 +64,6 @@ public class kadan {
         // minsum(arr);
         // maxprod(arr1);
         remove1(arr1);
+    
     }
 }
