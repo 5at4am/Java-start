@@ -54,6 +54,8 @@ public class kadan {
     }
 
     public static void kadan2(int[] a){
+        int max = 0;
+        int min = 0;
 
     }
 
