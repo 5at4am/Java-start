@@ -53,6 +53,7 @@ public class kadan {
         System.out.println(res);
     }
 
+    // understaning and revising the main concept
     public static void kadan2(int[] a){
         int max = 0;
         int min = 0;
