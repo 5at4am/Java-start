@@ -54,19 +54,35 @@ public class kadan {
     }
 
     // understaning and revising the main concept
-    public static void kadan2(int[] a){
-        int max = 0;
-        int min = 0;
+    public static void circular(int[] arr) {
+        int total = 0;
+        int max = 0,maxfar = Integer.MIN_VALUE;
+        int min = 0, minfar = Integer.MAX_VALUE;
+
+        for (int x : arr) {
+            total += x;
+            max = Math.max(x, max + x);
+            maxfar = Math.max(max, maxfar);
+
+            min = Math.min(x, min + x);
+            minfar = Math.min(min, minfar);
+        }
+        if( maxfar <0){
+            System.out.println(maxfar);
+        }
+
+        int ans = Math.max(maxfar, total - minfar);
+        System.out.println(ans);
 
     }
 
     public static void main(String[] args){
         int[] arr = {-2,1,2,-4,5};
         // maxsum(arr);
-        int[] arr1 = { -2, 3, -4 };
+        int[] arr1 = { 1, -2, 3, -2};
         // minsum(arr);
         // maxprod(arr1);
-        remove1(arr1);
+        circular(arr1);
     
     }
 }
