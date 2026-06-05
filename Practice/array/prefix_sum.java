@@ -22,6 +22,14 @@ public class prefix_sum {
             System.out.print(suff[i] + " ");
         }
     }
+    public static void pivot(int[] arr ){
+        int sum = 0;
+        
+        int[] left = new int[arr.length];
+        for(int i =1;i<arr.length;i++){
+
+        }
+    }
     public static void main(String[] args) {
         int[] arr = { 1, 7, 3, 6, 5, 6 };
         prefix(arr);
