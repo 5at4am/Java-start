@@ -23,18 +23,29 @@ public class prefix_sum {
         }
     }
     public static void pivot(int[] arr ){
-        int sum = 0;
-        
-        int[] left = new int[arr.length];
-        for(int i =1;i<arr.length;i++){
-
+        int totalsum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            totalsum += arr[i];
         }
+        int leftsum = 0
+        for(int i =1;i<arr.length;i++){
+            int rightsum = totalsum-leftsum-arr[i];
+            if(leftsum == rightsum) {
+                System.out.println(i);
+                return;
+
+            }
+            leftsum += arr[i];
+        }
+        System.out.println("-1");
     }
     public static void main(String[] args) {
         int[] arr = { 1, 7, 3, 6, 5, 6 };
-        prefix(arr);
-        System.out.println();
-        suffix(arr);
+        // prefix(arr);
+        // System.out.println();
+        // suffix(arr);
+        pivot(arr);
+
         
     }
     
