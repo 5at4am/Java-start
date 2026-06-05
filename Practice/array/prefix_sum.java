@@ -27,11 +27,12 @@ public class prefix_sum {
         for (int i = 0; i < arr.length; i++) {
             totalsum += arr[i];
         }
-        int leftsum = 0
-        for(int i =1;i<arr.length;i++){
+        int leftsum = 0;
+        for(int i =0;i<arr.length;i++){
             int rightsum = totalsum-leftsum-arr[i];
             if(leftsum == rightsum) {
-                System.out.println(i);
+                System.out.println("index is : "+i);
+                System.out.println("sum is : "+leftsum);
                 return;
 
             }
