@@ -44,7 +44,7 @@ public class prefix_sum {
         System.out.println("-1");
     }
 
-    public static void maxsum(int[] ar, int k) {
+    public static void maxsum(int[] arr, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
         int prefix = 0;
@@ -58,12 +58,36 @@ public class prefix_sum {
             
         }
     }
+    public static void subByK(int[] arr, int k){
+        int ans =0;
+        int sum = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+
+        int res = 0;
+        for(int i =0;i<arr.length;i++){
+            sum += arr[i];
+            int rem = sum%k;
+            if (rem < 0) {
+                rem = rem + k;
+            }
+            if (map.containsKey(rem)) {
+                res += map.get(rem);
+            }
+            map.put(rem, map.getOrDefault(rem, 0) + 1);
+        }
+        System.out.println("result is : "+res);
+        
+    }
     public static void main(String[] args) {
         int[] arr = { 1, 7, 3, 6, 5, 6 };
         // prefix(arr);
         // System.out.println();
         // suffix(arr);
-        pivot(arr);
+        // pivot(arr);
+        // maxsum(arr1, 5);
+        int[] arr1 = { 4, 5, 0, -2, -3, 1 };
+        subByK(arr1, 5);
 
         
     }
