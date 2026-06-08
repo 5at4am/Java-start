@@ -55,19 +55,20 @@ public class prefix_sum {
                 count += map.get(prefix - k);
             }
             map.put(prefix, map.getOrDefault(prefix, 0) + 1);
-            
+
         }
     }
-    public static void subByK(int[] arr, int k){
-        int ans =0;
+    
+    public static void subByK(int[] arr, int k) {
+        int ans = 0;
         int sum = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
 
         int res = 0;
-        for(int i =0;i<arr.length;i++){
+        for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
-            int rem = sum%k;
+            int rem = sum % k;
             if (rem < 0) {
                 rem = rem + k;
             }
@@ -76,18 +77,45 @@ public class prefix_sum {
             }
             map.put(rem, map.getOrDefault(rem, 0) + 1);
         }
-        System.out.println("result is : "+res);
-        
+        System.out.println("result is : " + res);
+
     }
+
+    public static void MaxLen01(int[] arr){
+        int zero = 0,one = 0;
+        int res = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                zero++;
+            } else {
+                one++;
+            }
+            int diff = zero - one;
+
+            if (map.containsKey(diff)) {
+                int prevIdx = map.get(diff);
+                res = Math.max(res, i - prevIdx);
+            } else {
+                map.put(diff, i);
+            }
+        }
+        System.out.println(res);
+
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 1, 7, 3, 6, 5, 6 };
+        // int[] arr = { 1, 7, 3, 6, 5, 6 };
         // prefix(arr);
         // System.out.println();
         // suffix(arr);
         // pivot(arr);
         // maxsum(arr1, 5);
-        int[] arr1 = { 4, 5, 0, -2, -3, 1 };
-        subByK(arr1, 5);
+        // int[] arr1 = { 4, 5, 0, -2, -3, 1 };
+        // subByK(arr1, 5);
+        int[] arr = { 0, 1, 1, 1, 1, 1, 0, 0, 0 };
+        MaxLen01(arr);
 
         
     }
