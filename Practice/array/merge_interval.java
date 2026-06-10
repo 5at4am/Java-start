@@ -77,6 +77,7 @@ public class merge_interval {
         // merge(arr);
         int[][] arr1 = {{1,2},{3,5},{6,7},{8,10},{12,16}};
         int[] a = {4,8};
-        insertInterval(arr1,a);
+        insertInterval(arr1, a);
+        
     }
 }
