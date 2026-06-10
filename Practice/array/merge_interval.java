@@ -26,9 +26,57 @@ public class merge_interval {
         }
     }
 
+    // insert interval
+    public static void insertInterval(int[][] arr, int[] interval) {
+        if (arr.length == 0)
+        return;
+        Arrays.sort(arr, (a, b) -> Integer.compare(a[0], b[0]));
+        
+        List<int[]> res = new ArrayList<>();
+        boolean insert = false;
+
+        // Insert interval at correct position
+        for (int i = 0; i < arr.length; i++) {
+            if (!insert && interval[0] < arr[i][0]) {
+                res.add(interval);
+                insert = true;
+            }
+            res.add(arr[i]);
+        }
+        // Merge intervals
+        List<int[]> ans = new ArrayList<>();
+
+        int s1 = res.get(0)[0];
+        int e1 = res.get(0)[1];
+
+        for (int i = 1; i < res.size(); i++) {
+
+            int s2 = res.get(i)[0];
+            int e2 = res.get(i)[1];
+
+            if (e1 >= s2) {
+                e1 = Math.max(e1, e2);
+            } else {
+                ans.add(new int[] { s1, e1 });
+                s1 = s2;
+                e1 = e2;
+            }
+        }
+
+        ans.add(new int[] { s1, e1 });
+
+        for (int[] x : ans) {
+            System.out.println(Arrays.toString(x));
+        }
+        
+    }
+
 
     public static void main(String[] args) {
         int[][] arr = {{1,3},{2,6},{8,10},{15,18}};
-        merge(arr);
+        // merge(arr);
+        int[][] arr1 = {{1,2},{3,5},{6,7},{8,10},{12,16}};
+        int[] a = {4,8};
+        insertInterval(arr1,a);
     }
 }
