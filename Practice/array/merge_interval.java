@@ -102,22 +102,22 @@ public class merge_interval {
             int s2 = arr2[j][0];
             int e2 = arr2[j][1];
 
-            if(s1<=s2){
+            if (s1 <= s2) {
                 if (e1 >= s2) {
                     int s = Math.max(s1, s2);
                     int e = Math.min(e1, e2);
-                    res.add(new int[]{s,e});
+                    res.add(new int[] { s, e });
                 }
-            }else{
-                if (e2>=s1) {
+            } else {
+                if (e2 >= s1) {
                     int s = Math.max(s1, s2);
                     int e = Math.min(e1, e2);
-                    res.add(new int[]{s,e});
+                    res.add(new int[] { s, e });
                 }
             }
-            if (e1<=e2) {
+            if (e1 <= e2) {
                 i++;
-            }else{
+            } else {
                 j++;
             }
         }
@@ -127,8 +127,25 @@ public class merge_interval {
 
     }
 
+    public static void checkOverlap(int[][] arr) {
+        boolean overlap = false;
+        int s1 = arr[0][0];
+        int e1 = arr[0][1];
+        for (int i = 1; i < arr.length; i++) {
+            int s2 = arr[i][0];
+            int e2 = arr[i][1];
+            if (e1 >= s2) {
+                overlap = true;
+            } else {
+                e1 = Math.max(e1, e2);
+            }
+        }
+        System.out.println(overlap);
+
+    }
+
     public static void main(String[] args) {
-        // int[][] arr = {{1,3},{2,6},{8,10},{15,18}};
+        int[][] arr = {{1,3},{2,6},{8,10},{15,18}};
         // merge(arr);
         // int[][] arr1 = {{1,2},{3,5},{6,7},{8,10},{12,16}};
         // int[] a = {4,8};
@@ -137,9 +154,10 @@ public class merge_interval {
         // int[][] arr2 = { { 1, 5 }, { 8, 12 }, { 15, 24 }, { 25, 26 } };
         // twoMerge(arr1, arr2);
 
-        int[] a = { 2, 9, 6 };
-        int[] b = { 4, 12, 10 };
-        meeting_room(a, b); 
+        // int[] a = { 2, 9, 6 };
+        // int[] b = { 4, 12, 10 };
+        // meeting_room(a, b); 
+        checkOverlap(arr);
         
     }
 }
