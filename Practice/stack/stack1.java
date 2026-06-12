@@ -75,14 +75,36 @@ public class stack1 {
                 st.pop();
             }
             if (st.isEmpty()) {
-                res[i]= -1;
-            }else{
+                res[i] = -1;
+            } else {
                 res[i] = st.peek();
             }
             st.push(arr[i]);
         }
         // print result
-        for(int i = 0; i < res.length; i++){
+        for (int i = 0; i < res.length; i++) {
+            System.out.print(res[i] + " ");
+        }
+    }
+    
+    public static void prev_small(int[] arr) {
+        int[] res = new int[arr.length];
+        Stack<Integer> st = new Stack<>();
+        res[0] = -1;
+        st.push(arr[0]);
+        for (int i = 1; i < res.length; i++) {
+            while (!st.isEmpty() && st.peek() >= arr[i]) {
+                st.pop();
+            }
+            if (st.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = st.peek();
+                st.push(arr[i]);
+            }
+        }
+        // print result
+        for (int i = 0; i < res.length; i++) {
             System.out.print(res[i] + " ");
         }
     }
@@ -95,7 +117,8 @@ public class stack1 {
         // System.out.println(valid_parenthesis(s));
         
         int[] arr = { 4,1,2,5,3};
-        prev_great(arr);
+        // prev_great(arr);
+        prev_small(arr);
 
 
     }
