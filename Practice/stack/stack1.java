@@ -100,8 +100,8 @@ public class stack1 {
                 res[i] = -1;
             } else {
                 res[i] = st.peek();
-                st.push(arr[i]);
             }
+            st.push(arr[i]);
         }
         // print result
         for (int i = 0; i < res.length; i++) {
