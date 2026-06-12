@@ -109,6 +109,29 @@ public class stack1 {
         }
     }
 
+    public static void next_small(int[] arr) {
+        int[] res = new int[arr.length];
+        Stack<Integer> st = new Stack<>();
+        int n = arr.length;
+        res[n - 1] = -1;
+        st.push(arr[n - 1]);
+        for (int i = n-2; i >= 0; i--) {
+            while (!st.isEmpty() && st.peek() >= arr[i]) {
+                st.pop();
+            }
+            if (st.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = st.peek();
+            }
+            st.push(arr[i]);
+        }
+        // print result
+        for (int i = 0; i < res.length; i++) {
+            System.out.print(res[i] + " ");
+        }
+    }
+
     public static void main(String[] args) {
         // String s = "abbaca";
         // remove_adjacent(s);
@@ -118,7 +141,8 @@ public class stack1 {
         
         int[] arr = { 4,1,2,5,3};
         // prev_great(arr);
-        prev_small(arr);
+        // prev_small(arr);
+        next_small(arr);
 
 
     }
