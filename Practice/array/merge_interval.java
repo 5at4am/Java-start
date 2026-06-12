@@ -72,26 +72,7 @@ public class merge_interval {
         }
 
     }
-
-    public static void meeting_room(int[] start, int[] stop) {
-        Arrays.sort(start);
-        Arrays.sort(stop);
-        int res = 0;
-        int room = 0;
-        int i = 0, j = 0;
-        while (i < start.length) {
-            if (start[i] < stop[j]) {
-                room++;
-                res = Math.max(res, room);
-                i++;
-            } else {
-                room--;
-                j++;
-            }
-        }
-        System.out.println(res);
-        
-    }
+    
 
     public static void twoMerge(int[][] arr1, int[][] arr2) {
         ArrayList<int[]> res = new ArrayList<>();
@@ -126,6 +107,26 @@ public class merge_interval {
         }
 
     }
+    
+    public static void meeting_room(int[] start, int[] stop) {
+        Arrays.sort(start);
+        Arrays.sort(stop);
+        int res = 0;
+        int room = 0;
+        int i = 0, j = 0;
+        while (i < start.length) {
+            if (start[i] < stop[j]) {
+                room++;
+                res = Math.max(res, room);
+                i++;
+            } else {
+                room--;
+                j++;
+            }
+        }
+        System.out.println(res);
+
+    }
 
     public static void checkOverlap(int[][] arr) {
         boolean overlap = false;
@@ -145,11 +146,13 @@ public class merge_interval {
     }
 
     public static void main(String[] args) {
-        int[][] arr = {{1,3},{2,6},{8,10},{15,18}};
+        // int[][] arr = {{1,3},{2,6},{8,10},{15,18}};
         // merge(arr);
+        
         // int[][] arr1 = {{1,2},{3,5},{6,7},{8,10},{12,16}};
         // int[] a = {4,8};
         // insertInterval(arr1, a);
+        
         // int[][] arr1 = { { 0, 2 }, { 5, 10 }, { 13, 23 }, { 24, 25 } };
         // int[][] arr2 = { { 1, 5 }, { 8, 12 }, { 15, 24 }, { 25, 26 } };
         // twoMerge(arr1, arr2);
@@ -157,7 +160,9 @@ public class merge_interval {
         // int[] a = { 2, 9, 6 };
         // int[] b = { 4, 12, 10 };
         // meeting_room(a, b); 
-        checkOverlap(arr);
+
+        // int[][] arr = { { 1, 3 }, { 2, 6 }, { 8, 10 }, { 15, 18 } };
+        // checkOverlap(arr);
         
     }
 }
