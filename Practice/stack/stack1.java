@@ -177,6 +177,32 @@ public class stack1 {
 
     }
 
+    public static void nextGreatesCircular(int[] arr) {
+        int n = arr.length;
+        int[] res = new int[n];
+        Stack<Integer> st = new Stack<>();
+
+        for (int i = n - 2; i >= 0; i--) {
+            st.push(arr[i]);
+        }
+
+        for (int i = n - 1; i >= 0; i--) {
+            while (!st.isEmpty() && st.peek() <= arr[i]) {
+                st.pop();
+            }
+            if (st.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = st.peek();
+            }
+            st.push(arr[i]);
+        }
+        for (int i = 0; i < res.length; i++) {
+            System.out.print(res[i] + " ");
+        }
+
+    }
+
     public static void main(String[] args) {
         // String s = "abbaca";
         // remove_adjacent(s);
@@ -190,8 +216,11 @@ public class stack1 {
         // next_small(arr);
         // next_greatest(arr);
 
-        int[] arr = { 73, 74, 75, 71, 69, 72, 76, 73 };
-        daily_temp(arr);
+        // int[] arr = { 73, 74, 75, 71, 69, 72, 76, 73 };
+        // daily_temp(arr);
+
+        int[] arr = { 1, 2, 3, 4, 3 };
+        nextGreatesCircular(arr);
 
     }
 }
