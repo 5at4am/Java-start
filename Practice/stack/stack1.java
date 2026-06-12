@@ -22,10 +22,15 @@ public class stack1 {
                 st.pop();
                 continue;
             }
-            st.push(s.chatAt(i));
+            st.push(s.charAt(i));
         }
-        Print(st);
+        while (!st.isEmpty()) {
+            ans += st.pop();
+        }
         
+        // reverse string
+        ans = new StringBuilder(ans).reverse().toString();
+        Print(ans);
     }
 
 
