@@ -115,8 +115,31 @@ public class stack1 {
         int n = arr.length;
         res[n - 1] = -1;
         st.push(arr[n - 1]);
-        for (int i = n-2; i >= 0; i--) {
+        for (int i = n - 2; i >= 0; i--) {
             while (!st.isEmpty() && st.peek() >= arr[i]) {
+                st.pop();
+            }
+            if (st.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = st.peek();
+            }
+            st.push(arr[i]);
+        }
+        // print result
+        for (int i = 0; i < res.length; i++) {
+            System.out.print(res[i] + " ");
+        }
+    }
+    
+    public static void next_greatest(int[] arr) {
+        int[] res = new int[arr.length];
+        Stack<Integer> st = new Stack<>();
+        int n = arr.length;
+        res[n - 1] = -1;
+        st.push(arr[n - 1]);
+        for (int i = n - 2; i >= 0; i--) {
+            while (!st.isEmpty() && st.peek() <= arr[i]) {
                 st.pop();
             }
             if (st.isEmpty()) {
@@ -142,7 +165,8 @@ public class stack1 {
         int[] arr = { 4,1,2,5,3};
         // prev_great(arr);
         // prev_small(arr);
-        next_small(arr);
+        // next_small(arr);
+        next_greatest(arr);
 
 
     }
