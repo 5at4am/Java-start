@@ -40,27 +40,26 @@ public class stack1 {
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
 
-            if((ch == '(') ||( ch =='{')|| (ch =='[')){
+            if ((ch == '(') || (ch == '{') || (ch == '[')) {
                 st.push(ch);
-            }else{
+            } else {
                 if (st.isEmpty()) {
                     return false;
                 }
 
-                if( (st.peek() == '(' && ch == ')')
-                || (st.peek() == '{' && ch == '}')
-                || (st.peek() == '[' && ch == ']'))
-                {
+                if ((st.peek() == '(' && ch == ')')
+                        || (st.peek() == '{' && ch == '}')
+                        || (st.peek() == '[' && ch == ']')) {
                     st.pop();
-                }else{
+                } else {
                     return false;
                 }
-                
+
             }
         }
         if (!st.isEmpty()) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
@@ -86,7 +85,7 @@ public class stack1 {
             System.out.print(res[i] + " ");
         }
     }
-    
+
     public static void prev_small(int[] arr) {
         int[] res = new int[arr.length];
         Stack<Integer> st = new Stack<>();
@@ -131,7 +130,7 @@ public class stack1 {
             System.out.print(res[i] + " ");
         }
     }
-    
+
     public static void next_greatest(int[] arr) {
         int[] res = new int[arr.length];
         Stack<Integer> st = new Stack<>();
@@ -155,19 +154,44 @@ public class stack1 {
         }
     }
 
+    public static void daily_temp(int[] arr) {
+        Stack<Integer> st = new Stack<>();
+        int n = arr.length;
+        int[] res = new int[arr.length];
+        res[n - 1] = 0;
+        st.push(n - 1);
+        for (int i = n - 2; i >= 0; i--) {
+            while (!st.isEmpty() && arr[st.peek()] <= arr[i]) {
+                st.pop();
+            }
+            if (st.isEmpty()) {
+                res[i] = 0;
+            } else {
+                res[i] = st.peek() - i;
+            }
+            st.push(i);
+        }
+        for (int i = 0; i < res.length; i++) {
+            System.out.print(res[i] + " ");
+        }
+
+    }
+
     public static void main(String[] args) {
         // String s = "abbaca";
         // remove_adjacent(s);
 
         // String s = "({})[]";
         // System.out.println(valid_parenthesis(s));
-        
-        int[] arr = { 4,1,2,5,3};
+
+        // int[] arr = { 4, 1, 2, 5, 3 };
         // prev_great(arr);
         // prev_small(arr);
         // next_small(arr);
-        next_greatest(arr);
+        // next_greatest(arr);
 
+        int[] arr = { 73, 74, 75, 71, 69, 72, 76, 73 };
+        daily_temp(arr);
 
     }
 }
