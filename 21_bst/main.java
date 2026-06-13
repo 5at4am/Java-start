@@ -51,9 +51,9 @@ public class main {
         int value[]= {5,1,3,4,2,7};
         Node root =null;
         for(int i = 0;i<value.length;i++){
-            root = insert(root,value[i])
+            root = insert(root, value[i]);
         }
-        Node root = new Node(4);
+        root = new Node(4);
         root.left = new Node(2);
         root.right = new Node(5);
         root.left.left = new Node(1);
