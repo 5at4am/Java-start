@@ -203,6 +203,37 @@ public class stack1 {
 
     }
 
+    public static void remove_adjacent_2(String s, int k) {
+        Stack<int[]> st = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (st.isEmpty() || st.peek()[0] != ch) {
+                st.push(new int[] { ch, 1 });
+            } else {
+
+                st.peek()[1]++;
+
+                if (st.peek()[1] == k) {
+                    st.pop();
+                }
+            }
+        }
+        
+        StringBuilder sb = new StringBuilder();
+
+        while (!st.isEmpty()) {
+            int[] pair = st.pop();
+            
+            char ch = (char) pair[0];
+            int count = pair[1];
+            for (int i = 0; i < count; i++) {
+                sb.append(ch);
+            }
+        }
+        System.out.println(sb.reverse().toString());
+    }
+
     public static void main(String[] args) {
         // String s = "abbaca";
         // remove_adjacent(s);
@@ -219,8 +250,12 @@ public class stack1 {
         // int[] arr = { 73, 74, 75, 71, 69, 72, 76, 73 };
         // daily_temp(arr);
 
-        int[] arr = { 1, 2, 3, 4, 3 };
-        nextGreatesCircular(arr);
+        // int[] arr = { 1, 2, 3, 4, 3 };
+        // nextGreatesCircular(arr);
+
+        String s = "deeedbbcccbdaa";
+        remove_adjacent_2(s, 3);
+
 
     }
 }
