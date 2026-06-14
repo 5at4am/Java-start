@@ -49,19 +49,23 @@ public class main {
         if (root == null)
             return;
         inorder(root.left);
-        System.out.println(root);
+        System.out.print(root.data);
         inorder(root.right);
 
     }
 
     public static Node delet(Node root, int key) {
+        if (root == null) {
+            return null;
+        }
+
         if (root.data < key) {
             root.right = delet(root.right, key);
         } else if (root.data > key) {
             root.left = delet(root.left, key);
         } else {
             // case 1 = root has no child
-            if (root.left == null & root.right == null) {
+            if (root.left == null && root.right == null) {
                 return null;
             }
             // case 2 = single child
@@ -74,13 +78,13 @@ public class main {
             // case 3 = two children
             Node IS = InOrderSuccessor(root.right);
             root.data = IS.data;
-            root.right = = delet(root.right, IS.data);
+            root.right = delet(root.right, IS.data);
         }
         return root;
 
     }
 
-    public static Node InOrderSucessor(Node root) {
+    public static Node InOrderSuccessor(Node root) {
         while (root.left != null) {
             root = root.left;
         }
@@ -95,10 +99,20 @@ public class main {
         for (int i = 0; i < value.length; i++) {
             root = insert(root, value[i]);
         }
+        // root = new Node(4);
+        // root.left = new Node(2);
+        // root.right = new Node(5);
+        // root.left.left = new Node(1);
+        // root.left.right = new Node(3);
+        // root.right.right = new Node(6);
 
-        // System.out.println(search(root, 2));
+        System.out.println(search(root, 2));
+
         inorder(root);
         System.out.println();
-        delet(root, 1)
+        root = delet(root, 1);
+        System.out.println();
+        inorder(root);
+
     }
 }
