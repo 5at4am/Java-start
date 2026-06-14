@@ -83,6 +83,23 @@ public class main {
         return root;
 
     }
+    public static void printrange(Node root, int k1, int k2){
+        if(root == null){
+            return;
+        }
+
+        if( k1<= root.data && root.data<= k2){
+            printrange(root.left,k1,k2);
+            System.out.print(root.data + " ");
+            printrange(root.right,k1,k2);
+
+        }else if( root.data < k1){
+            printrange(root.right,k1,k2);
+        }else{
+            printrange(root.left,k1,k2);
+        }
+
+    }
 
     public static Node InOrderSuccessor(Node root) {
         while (root.left != null) {
@@ -106,13 +123,14 @@ public class main {
         // root.left.right = new Node(3);
         // root.right.right = new Node(6);
 
-        System.out.println(search(root, 2));
+        // System.out.println(search(root, 2));
 
-        inorder(root);
-        System.out.println();
-        root = delet(root, 1);
-        System.out.println();
-        inorder(root);
+        // inorder(root);
+        // System.out.println();
+        // root = delet(root, 1);
+        // System.out.println();
+        // inorder(root);
+        printrange(root,3,5);
 
     }
 }
