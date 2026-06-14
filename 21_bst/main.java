@@ -33,16 +33,27 @@ public class main {
 
     // search on binary tree //? (BST)
 
-    public static boolean search(Node root,int key){        // O(H) -> height
-        if(root == null) return false;
+    public static boolean search(Node root, int key) { // O(H) -> height
+        if (root == null)
+            return false;
 
-        if(root.data == key) return true;
+        if (root.data == key)
+            return true;
 
-        if(root.data > key){
-            return search(root.left,key);
-        }else{
-            return search(root.right,key);
+        if (root.data > key) {
+            return search(root.left, key);
+        } else {
+            return search(root.right, key);
         }
+
+    }
+
+    public static void inorder(Node root) {
+        if (root == null)
+            return;
+        inorder(root.left);
+        System.out.println(root);
+        inorder(root.right);
 
     }
 
