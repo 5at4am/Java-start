@@ -1,5 +1,7 @@
 import java.util.*;
 
+import org.w3c.dom.Node;
+
 public class main {
     static class Node {
         int data;
@@ -134,6 +136,20 @@ public class main {
 
     }
 
+    public static boolean isValid(Node root, Node min, Node max) {
+        if (root == null) {
+            return true;
+        }
+        // for minimum
+        if (min != null && root.data <= min.data) {
+            return false;
+        } else if (max != null && root.data >= max.data) {
+            return false;
+        }
+        return isValid(root.left, min, root) && isValid(root.right, root, max);
+
+    }
+
     public static void main(String[] args) {
 
         int value[] = { 8, 5, 3, 6, 10, 11, 14 };
@@ -157,7 +173,12 @@ public class main {
         // inorder(root);
         // printrange(root,3,5);
 
-        Print2leaf(root, new ArrayList<>());
+        // Print2leaf(root, new ArrayList<>());
 
+        if (isValid(root, null, null)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
     }
 }
