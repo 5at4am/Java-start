@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class main {
     static class Node {
         int data;
@@ -49,7 +51,7 @@ public class main {
         if (root == null)
             return;
         inorder(root.left);
-        System.out.print(root.data);
+        System.out.print(root.data + " ");
         inorder(root.right);
 
     }
@@ -83,20 +85,21 @@ public class main {
         return root;
 
     }
-    public static void printrange(Node root, int k1, int k2){
-        if(root == null){
+
+    public static void printrange(Node root, int k1, int k2) {
+        if (root == null) {
             return;
         }
 
-        if( k1<= root.data && root.data<= k2){
-            printrange(root.left,k1,k2);
+        if (k1 <= root.data && root.data <= k2) {
+            printrange(root.left, k1, k2);
             System.out.print(root.data + " ");
-            printrange(root.right,k1,k2);
+            printrange(root.right, k1, k2);
 
-        }else if( root.data < k1){
-            printrange(root.right,k1,k2);
-        }else{
-            printrange(root.left,k1,k2);
+        } else if (root.data < k1) {
+            printrange(root.right, k1, k2);
+        } else {
+            printrange(root.left, k1, k2);
         }
 
     }
@@ -109,9 +112,31 @@ public class main {
 
     }
 
+    public static void Printpath(ArrayList<Integer> path) {
+        for (int i = 0; i < path.size(); i++) {
+            System.out.print(path.get(i) + " ");
+        }
+        System.out.println("Null");
+
+    }
+
+    public static void Print2leaf(Node root, ArrayList<Integer> path) {
+        if (root == null) {
+            return;
+        }
+        path.add(root.data);
+        if (root.left == null && root.right == null) {
+            Printpath(path);
+        }
+        Print2leaf(root.left, path);
+        Print2leaf(root.right, path);
+        path.remove(path.size() - 1);
+
+    }
+
     public static void main(String[] args) {
 
-        int value[] = { 5, 1, 3, 4, 2, 7 };
+        int value[] = { 8, 5, 3, 6, 10, 11, 14 };
         Node root = null;
         for (int i = 0; i < value.length; i++) {
             root = insert(root, value[i]);
@@ -125,12 +150,14 @@ public class main {
 
         // System.out.println(search(root, 2));
 
-        // inorder(root);
-        // System.out.println();
+        inorder(root);
+        System.out.println();
         // root = delet(root, 1);
         // System.out.println();
         // inorder(root);
-        printrange(root,3,5);
+        // printrange(root,3,5);
+
+        Print2leaf(root, new ArrayList<>());
 
     }
 }
