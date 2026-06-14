@@ -88,6 +88,13 @@ public class main {
 
     }
 
+    public static Node InOrderSuccessor(Node root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+
+    }
     public static void printrange(Node root, int k1, int k2) {
         if (root == null) {
             return;
@@ -106,13 +113,7 @@ public class main {
 
     }
 
-    public static Node InOrderSuccessor(Node root) {
-        while (root.left != null) {
-            root = root.left;
-        }
-        return root;
-
-    }
+    
 
     public static void Printpath(ArrayList<Integer> path) {
         for (int i = 0; i < path.size(); i++) {
@@ -150,6 +151,28 @@ public class main {
 
     }
 
+    public static Node mirror(Node root) {
+        if (root == null) {
+            return null;
+        }
+
+        Node left = mirror(root.left);
+        Node right = mirror(root.right);
+        root.left = right;
+        root.right = left;
+
+        return root;
+    }
+
+    public static void preorder(Node root) {
+        if (root == null) {
+            return;
+        }
+        System.out.print(root.data + " ");
+        preorder(root.left);
+        preorder(root.right);
+    }
+
     public static void main(String[] args) {
 
         int value[] = { 8, 5, 3, 6, 10, 11, 14 };
@@ -175,10 +198,13 @@ public class main {
 
         // Print2leaf(root, new ArrayList<>());
 
-        if (isValid(root, null, null)) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
+        // if (isValid(root, null, null)) {
+        // System.out.println("true");
+        // } else {
+        // System.out.println("false");
+        // }
+        root = mirror(root);
+        preorder(root);
+
     }
 }
