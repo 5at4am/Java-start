@@ -57,18 +57,17 @@ public class main {
 
     }
 
-    public static Node search(Node root, int key) {
+    public static boolean search(Node root, int key) {
         if (root == null) {
-            return;
+            return false;
         }
         if (root.data == key)
-            return root;
+            return true;
         if (root.data > key) {
             search(root.right, key);
         } else {
             search(root.left, key);
         }
-        return root;
         
     }
 
