@@ -57,6 +57,21 @@ public class main {
 
     }
 
+    public static Node search(Node root, int key) {
+        if (root == null) {
+            return;
+        }
+        if (root.data == key)
+            return root;
+        if (root.data > key) {
+            search(root.right, key);
+        } else {
+            search(root.left, key);
+        }
+        return root;
+        
+    }
+
     public static void main(String[] args) {    
 
         int value[]= {5,1,3,4,2,7};
