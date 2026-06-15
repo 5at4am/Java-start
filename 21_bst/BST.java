@@ -1,5 +1,6 @@
-import org.w3c.dom.Node;
+import java.util.*;
 
+import org.w3c.dom.Node;
 public class BST {
     static class Node {
         int data;
@@ -50,11 +51,33 @@ public class BST {
             return null;
         }
 
-        int mid = (start + end)/2;
+        int mid = (start + end) / 2;
         Node root = new Node(arr[mid]);
         root.left = create_bst(arr, start, mid - 1);
         root.right = create_bst(arr, mid + 1, end);
         return root;
+    }
+
+    public static Node CreateBST(ArrayList<Integer> arr, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+
+        int mid = (start + end) / 2;
+        Node root = new Node(arr.get(mid));
+        root.left = CreateBST(arr, start, mid - 1);
+        root.right = CreateBST(arr, mid + 1, end);
+        return root;
+    }
+
+    public static Node BalanceBst(Node root) {
+        // calculate inorder sequence
+        ArrayList<Integer> in_order = new ArrayList<>();
+        inorder(root, in_order);
+
+        // sorted inorder -> balanced bst
+        return CreateBST(in_order, 0, in_order.size() - 1);
+        
     }
 
     public static void main(String[] args) {
@@ -63,10 +86,15 @@ public class BST {
         for (int i = 0; i < value.length; i++) {
             root = insert(root, value[i]);
         }
-        preorder(root);
-        root = create_bst(value, 0, value.length - 1);
+        // preorder(root);
+        // root = create_bst(value, 0, value.length - 1);
+        // System.out.println();
+        // preorder(root);
+
+        root = BalanceBst(root);
         System.out.println();
         preorder(root);
+
 
     }
 }
