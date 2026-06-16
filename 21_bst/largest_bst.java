@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public class largest_bst {
     static class Node{
         Node left;
