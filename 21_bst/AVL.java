@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public class AVL {
     static class Node {
         int data;
@@ -40,7 +38,7 @@ public class AVL {
         Node y = x.right;
         Node z = y.left;
 
-        y.left =x;
+        y.left = x;
         x.right = z;
 
         x.height = max(height(x.left), height(x.right)) + 1;
@@ -57,8 +55,8 @@ public class AVL {
         x.right = y;
         y.left = z;
 
-        y.height = max(height(y.left), height(y.right) + 1);
-        x.height = max(height(x.left), height(x.right) + 1);
+        y.height = max(height(y.left), height(y.right)) + 1;
+        x.height = max(height(x.left), height(x.right)) + 1;
 
         return x;
 
@@ -125,8 +123,6 @@ public class AVL {
         root = insert(root, 40);
         root = insert(root, 50);
         root = insert(root, 25);
-
-
 
         preorder(root);
 
