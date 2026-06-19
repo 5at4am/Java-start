@@ -20,9 +20,37 @@ public class heap {
         public int peek() {
             return arr.get(0);
         }
+        
 
-        public void delete() {
-            
+        public void remove() {
+            int data = arr.get(0);
+            // swap firsta and last
+            int temp = arr.get(0);
+            arr.set(0, arr.get(arr.size() - 1));
+            arr.set(arr.size() - 1, temp);
+
+            // - delete last element
+            arr.remove(arr.size() - 1);
+        }
+
+        private void heapify(int i) {
+            int left = 2 * i + 1;
+            int right = 2 * i + 2;
+            int min = i;
+
+            if (left < arr.size() && arr.get(left) < arr.get(min)) {
+                min = left;
+            }
+            if (right < arr.size() && arr.get(right) < arr.get(min)) {
+                min = right;
+            }
+            if (min != i) {
+                // swap
+                int temp = arr.get(min);
+                arr.set(min, arr.get(i));
+                arr.set(i, temp);
+                heapify(min);
+            }
         }
 
     }
