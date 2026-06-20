@@ -20,7 +20,6 @@ public class heap {
         public int peek() {
             return arr.get(0);
         }
-        
 
         public void remove() {
             int data = arr.get(0);
@@ -31,6 +30,11 @@ public class heap {
 
             // - delete last element
             arr.remove(arr.size() - 1);
+
+            // heapify
+            heapify(0);
+            return data;
+
         }
 
         private void heapify(int i) {
@@ -49,6 +53,7 @@ public class heap {
                 int temp = arr.get(min);
                 arr.set(min, arr.get(i));
                 arr.set(i, temp);
+
                 heapify(min);
             }
         }
