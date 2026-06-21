@@ -2,12 +2,12 @@ public class heap_sort {
 
     public static void heapify(int[] arr, int i, int size) {
         int left = 2 * i + 1;
-        int rigth = 2 * i + 2;
+        int right = 2 * i + 2;
         int max = i;
         if (left < size && arr[left] > arr[max]) {
             max = left;
         }
-        if(right<  size && arr[left] > arr[max]){
+        if(right <  size && arr[right] > arr[max]){
             max = right;
         }
         if (max != i) {
@@ -16,7 +16,7 @@ public class heap_sort {
             arr[i] = arr[max];
             arr[max] = temp;
 
-            heapify(arr, rigth, size);
+            heapify(arr, right, size);
 
         }
 
@@ -27,7 +27,7 @@ public class heap_sort {
         int n = arr.length;
 
         for (int i = n / 2; i >= 0; i--) {
-            heapify(i, n);
+            heapify(arr,i, n);
         }
 
         // push largest at end
@@ -43,6 +43,11 @@ public class heap_sort {
     }
 
     public static void main(String[] args) {
+        int[] arr = { 1, 2, 4, 5, 3 };
+        sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+                System.out.print(arr[i]+" ");
+        }
 
     }
 
