@@ -35,7 +35,7 @@ public class car {
         for (int i = 0; i < pts.length; i++) {
             System.out.println("c " + pq.peek().dis + " " + pq.peek().x + " " + pq.peek().y + " "+  pq.peek().idx);
             pq.poll();
-
+ 
         }
     }
 }
