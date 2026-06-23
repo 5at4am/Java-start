@@ -1,5 +1,4 @@
-
-mport java.util.*;
+import java.util.*;
 public class rope {
     public static void main(String[] args) {
         int[] rope = {2,3,3,4,6};
