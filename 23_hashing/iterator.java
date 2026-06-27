@@ -9,7 +9,7 @@ public class iterator {
         hs.add("bangalore");
         hs.add("chennai");
 
-        Iterator<String> itr = hs.iterator();
+        Iterator itr = hs.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
