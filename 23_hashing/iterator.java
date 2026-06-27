@@ -14,7 +14,7 @@ public class iterator {
         // System.out.println(itr.next());
         // }
 
-        for (String c : hs) {
+        for (String c : hs) { 
             System.out.println(c);
         }
 
