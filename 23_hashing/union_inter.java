@@ -29,9 +29,9 @@ public class union_inter {
 
         for (Integer a : arr2) {
             if (set.contains(a)) {
-                set.remove(a);
                 System.out.print(a + " ");
                 count++;
+                set.remove(a);
             }
         }
         System.out.println();
