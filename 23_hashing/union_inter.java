@@ -1,36 +1,37 @@
 import java.util.*;
+
 public class union_inter {
     public static void main(String[] args) {
-        int[] arr1 = {7,3,9};
-        int[] arr2 = {6,3,9,2,9,4};
+        int[] arr1 = { 7, 3, 9 };
+        int[] arr2 = { 6, 3, 9, 2, 9, 4 };
         HashSet<Integer> set = new HashSet<>();
-        for (int i = 0; i <arr1.length ; i++) {
-            set.add(arr1[i]);
+        for (Integer a : arr1) {
+            set.add(a);
         }
-        for (int i = 0; i < arr2.length; i++) {
-            set.add(arr2[i]);
+        for (Integer a : arr2) {
+            set.add(a);
         }
         System.out.println(set.size());
-        
+
         for (Integer u : set) {
-            System.out.print(u+ " ");
+            System.out.print(u + " ");
         }
         System.out.println();
 
         // intersection
 
         set.clear();
-        for (int i = 0; i <arr1.length ; i++) {
-            set.add(arr1[i]);
+        for (Integer a : arr1) {
+            set.add(a);
         }
 
-        int count=0;
+        int count = 0;
 
-        for (int i = 0; i < arr2.length; i++) {
-            if(set.contains(arr2[i])){
+        for (Integer a : arr2) {
+            if (set.contains(a)) {
+                set.remove(a);
+                System.out.print(a + " ");
                 count++;
-                System.out.print(arr2[i]+" ");
-                set.remove(arr2[i]);
             }
         }
         System.out.println();
