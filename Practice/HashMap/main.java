@@ -44,12 +44,58 @@ public class main {
 
     }
 
+
+
+    public static boolean ransom_val(String ransom, String magazine) {
+        HashMap<Character, Integer> map = new HashMap<>();
+    
+        for (char c : magazine.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
+        for (char c : ransom.toCharArray()) {
+            if (map.getOrDefault(c, 0) == 0) {
+                return false;
+            }
+           map.put(c, map.get(c) - 1);
+        }
+        return true;
+
+    }
+
+    public static int baloon(String s){
+        HashMap<Character, Integer> have = new HashMap<>();
+        HashMap<Character, Integer> need = new HashMap<>();
+
+        for (char c : s.toCharArray()) {
+            have.put(c, have.getOrDefault(c, 0) + 1);
+        }
+        need.put('b', 1);
+        need.put('a', 1);
+        need.put('l', 2);
+        need.put('o', 2);
+        need.put('n', 1);
+
+        int answer = Integer.MAX_VALUE;
+        for (Map.Entry<Character, Integer> entry : need.entrySet()) {
+            char c = entry.getKey();
+            int required = entry.getValue();
+            int available = have.getOrDefault(c, 0);
+            answer = Math.min(answer, available / required);
+
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         // String s = "ab";
         // System.out.println(firstunique(s));
-        String s = "aabc";
-        String t = "aabc";
-        System.out.println(ransom(s, t));
+        // String s = "aabc";
+        // String t = "aabc";
+        // System.out.println(ransom(s, t));
+
+        String t = "balloonbaloonballloon";
+        System.out.println(baloon(t));
 
     }
 }
