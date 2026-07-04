@@ -40,6 +40,49 @@ public class main {
         return prev;
     }
 
+    // reverse from left to right
+
+    public static Node reverseLR(Node head, int left, int right) {
+
+        if (head == null) {
+            return null;
+        }
+        if (left == right) {
+            return head;
+        }
+        Node before = null;
+        int pos = 1;
+        Node t = head;
+        while (pos < left) {
+
+            before = t;
+            t = t.next;
+            pos++;
+
+        }
+        Node curr = t;
+        Node prev = null;
+        Node next = null;
+
+        int count = right - left + 1;
+
+        while (count-- > 0) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        t.next = curr;
+
+        if (before == null)
+            head = prev;
+        else
+            before.next = prev;
+
+        return head;
+
+    }
 
     public static void main(String[] args) {
 
@@ -57,11 +100,11 @@ public class main {
         head = addLast(head, 11);
         head = addLast(head, 12);
 
-        head = reverseLL(head);
+        head = reverseLR(head, 3, 6);
 
         Node curr = head;
         while (curr != null) {
-            System.out.print(curr.data+ " -> ");
+            System.out.print(curr.data + " -> ");
             curr = curr.next;
         }
 
