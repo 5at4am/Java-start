@@ -63,7 +63,7 @@ public class main {
 
     }
 
-    public static int baloon(String s){
+    public static int baloon(String s) {
         HashMap<Character, Integer> have = new HashMap<>();
         HashMap<Character, Integer> need = new HashMap<>();
 
@@ -87,6 +87,34 @@ public class main {
         return answer;
     }
 
+    public static int longestpallindrome(String s) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+        boolean odd = false;
+        int res = 0;
+        for (Map.Entry<Character, Integer> e : map.entrySet()) {
+            int val = e.getValue();
+            if (val % 2 == 0) {
+                res += val;
+            } else {
+                odd = true;
+            }
+        }
+        if (odd == false) {
+            return res;
+        }
+        for (Map.Entry<Character, Integer> e : map.entrySet()) {
+            int val = e.getValue();
+            if (val % 2 == 1) {
+                res += val - 1;
+            }
+        }
+        return res + 1;
+    }
+
     public static void main(String[] args) {
         // String s = "ab";
         // System.out.println(firstunique(s));
@@ -94,8 +122,10 @@ public class main {
         // String t = "aabc";
         // System.out.println(ransom(s, t));
 
-        String t = "balloonbaloonballloon";
-        System.out.println(baloon(t));
+        // String t = "balloonbaloonballoon";
+        // System.out.println(baloon(t));
 
+        String s = "abccccdd";
+        System.out.println(longestpallindrome(s));
     }
 }
